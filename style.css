@@ -1,188 +1,100 @@
-/* Stili Aggiunti per testo_originale.html e altre pagine secondarie */
+/* Stili specifici per traduzione_studio.html */
 
-/* Background specifico per le pagine secondarie, se necessario (oppure commenta per mantenere il gradiente dell'index) */
-.lyrics-page-body {
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+/* Body background specifico per la pagina di traduzione */
+.translation-page-body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
 }
 
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #a9e4f9;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background: rgba(76, 201, 240, 0.1);
-    margin-top: 15px;
-    transition: all 0.3s;
-}
-
-.back-btn:hover {
-    background: rgba(76, 201, 240, 0.2);
-}
-
-.lyrics-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(76, 201, 240, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.lyrics-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #f72585;
-}
-
-.lyrics-title {
-    color: #f72585;
-    font-size: 1.8rem;
-}
-
-.lyrics-info { /* Nuovo stile per l'informazione sulla durata */
-    color: #a9e4f9; 
-    font-size: 0.9rem;
-}
-
-.lyrics-content {
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    white-space: pre-line;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 25px;
-    border-radius: 10px;
-    overflow-x: auto;
-}
-
-.chorus {
-    color: #4cc9f0;
-    font-weight: bold;
-    margin: 20px 0;
-    padding-left: 20px;
-    border-left: 3px solid #f72585;
-}
-
-.vocabulary-box {
-    background: rgba(42, 157, 143, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 25px 0;
-    border-left: 4px solid #2a9d8f;
-}
-
-.vocab-grid {
+/* Layout per affiancamento testi (due colonne) */
+.comparison-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
-.vocab-item {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 12px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.english-word {
-    color: #4cc9f0;
-    font-weight: bold;
-    display: block;
-}
-
-.italian-word {
-    color: #f72585;
-    font-size: 0.9rem;
-    display: block;
-    margin-top: 5px;
-}
-
-.analysis-section {
+.column {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     padding: 25px;
-    margin-top: 30px;
+    border: 1px solid rgba(76, 201, 240, 0.2);
 }
 
-.section-title {
-    color: #4cc9f0;
-    border-bottom: 1px solid rgba(76, 201, 240, 0.3);
-    padding-bottom: 10px;
+.column-title {
+    color: #f72585;
+    border-bottom: 2px solid #4cc9f0;
+    padding-bottom: 15px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.analysis-list { /* Classe per pulizia stile inline */
-    margin: 15px 0; 
-    padding-left: 25px;
+/* Stile per il box Metafore */
+.metafora-box {
+    background: rgba(114, 9, 183, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border-left: 4px solid #7209b7;
 }
 
-/* Stili per la sezione CTA (Call to Action) in fondo alla pagina */
-.bottom-cta-container {
-    text-align: center; 
+.metafora-box p {
+    margin-top: 10px;
+}
+
+/* Stili per il percorso di studio */
+.study-path {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
     margin: 40px 0;
+}
+
+.step {
     display: flex;
+    margin-bottom: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.step-number {
+    background: #f72585;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.video-btn-secondary {
-    display: inline-flex; 
-    align-items: center; 
-    gap: 10px; 
-    background: linear-gradient(to right, #f72585, #b5179e); 
-    color: white; 
-    padding: 15px 30px; 
-    border-radius: 50px; 
-    text-decoration: none; 
+    font-size: 1.3rem;
     font-weight: bold;
-    transition: transform 0.3s;
+    margin-right: 20px;
+    flex-shrink: 0;
 }
 
-.video-btn-secondary:hover {
-    transform: scale(1.03);
+.exercise-box {
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
 }
 
-.nav-btn-secondary {
-    display: inline-flex; 
-    align-items: center; 
-    gap: 10px; 
-    background: rgba(76, 201, 240, 0.2); 
-    color: white; 
-    padding: 15px 30px; 
-    border-radius: 50px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    border: 1px solid #4cc9f0;
-    transition: background 0.3s;
+.exercise-title {
+    color: #4cc9f0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.nav-btn-secondary:hover {
-    background: rgba(76, 201, 240, 0.3);
-}
 
-.footer-song-info {
-    margin: 5px 0; /* Aggiunto piccolo margine per separare le righe nel footer */
-}
-
-@media (max-width: 768px) {
-    .lyrics-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .vocab-grid {
-        grid-template-columns: repeat(2, 1fr);
+/* Media Query Adjustment specifico per l'affiancamento */
+@media (max-width: 900px) {
+    .comparison-section {
+        grid-template-columns: 1fr;
     }
 }
