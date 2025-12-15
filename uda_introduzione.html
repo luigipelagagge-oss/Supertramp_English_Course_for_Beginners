@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDA: English & Tech Fusion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a1931 0%, #1a1a2e 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(247, 37, 133, 0.1));
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 2px solid #4cc9f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(76, 201, 240, 0.3);
+        }
+        
+        .uda-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #f72585, #b5179e);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            color: #a9e4f9;
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 20px;
+        }
+        
+        .uda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .uda-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .uda-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #4cc9f0, #f72585);
+        }
+        
+        .uda-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: #4cc9f0;
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            color: #4cc9f0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .card-title {
+            color: #f72585;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .disciplines {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .discipline {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .discipline i {
+            color: #f72585;
+        }
+        
+        .learning-outcomes {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #f72585;
+        }
+        
+        .outcome-list {
+            list-style-type: none;
+        }
+        
+        .outcome-list li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+        
+        .outcome-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4cc9f0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .timeline {
+            margin: 50px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .timeline-number {
+            background: #f72585;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #4cc9f0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            width: 150px;
+            transition: transform 0.3s;
+        }
+        
+        .tech-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .html-icon { color: #e34c26; }
+        .css-icon { color: #264de4; }
+        .github-icon { color: #f1f1f1; }
+        .english-icon { color: #4cc9f0; }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            min-width: 280px;
+            justify-content: center;
+        }
+        
+        .start-learning {
+            background: linear-gradient(to right, #4cc9f0, #4361ee);
+            color: white;
+        }
+        
+        .view-project {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid #4cc9f0;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .uda-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                min-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> UDA: English & Tech Fusion</h1>
+            <div class="uda-badge">UNITÀ DI APPRENDIMENTO INTERDISCIPLINARE</div>
+            <p class="subtitle">Impara l'Inglese attraverso la Musica e contemporaneamente scopri come costruire un sito web e pubblicarlo su GitHub</p>
+            
+            <div class="disciplines">
+                <div class="discipline">
+                    <i class="fas fa-language"></i>
+                    <span>Lingua Inglese</span>
+                </div>
+                <div class="discipline">
+                    <i class="fas fa-code"></i>
+                    <span>Tecnologia</span>
+                </div>
+                <div class="discipline">
+                    <i class="fab fa-github"></i>
+                    <span>Informatica</span>
+                </div>
+                <div class="discipline">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Educazione Digitale</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="uda-grid">
+            <div class="uda-card">
+                <div class="card-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h2 class="card-title">Contenuto: Lingua Inglese</h2>
+                <p>Studia la grammatica e il vocabolario inglese attraverso l'analisi della canzone "Take the Long Way Home" dei Supertramp.</p>
+                <ul style="margin-top: 15px; padding-left: 20px;">
+                    <li>Grammatica contestualizzata</li>
+                    <li>Vocabolario autentico</li>
+                    <li>Pronuncia e ascolto</li>
+                    <li>Traduzione guidata</li>
+                </ul>
+            </div>
+            
+            <div class="uda-card">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="card-title">Strumento: HTML/CSS</h2>
+                <p>Impara le basi dello sviluppo web creando pagine HTML con stili CSS per presentare i contenuti in modo accattivante.</p>
+                <ul style="margin-top: 15px; padding-left: 20px;">
+                    <li>Struttura HTML</li>
+                    <li>Stili CSS</li>
+                    <li>Design responsive</li>
+                    <li>Layout moderni</li>
+                </ul>
+            </div>
+            
+            <div class="uda-card">
+                <div class="card-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h2 class="card-title">Piattaforma: GitHub</h2>
+                <p>Scopri come pubblicare il tuo sito web utilizzando GitHub Pages, comprendendo i concetti base del version control.</p>
+                <ul style="margin-top: 15px; padding-left: 20px;">
+                    <li>Repository GitHub</li>
+                    <li>GitHub Pages</li>
+                    <li>Version control</li>
+                    <li>Pubblicazione online</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="learning-outcomes">
+            <h2 style="color: #4cc9f0; margin-bottom: 25px; text-align: center;">
+                <i class="fas fa-bullseye"></i> Obiettivi di Apprendimento
+            </h2>
+            
+            <div class="uda-grid">
+                <div>
+                    <h3 style="color: #f72585; margin-bottom: 15px;">Competenze di Inglese</h3>
+                    <ul class="outcome-list">
+                        <li>Comprendere testi autentici in lingua inglese</li>
+                        <li>Arricchire il proprio vocabolario</li>
+                        <li>Analizzare strutture grammaticali in contesto</li>
+                        <li>Sviluppare capacità di ascolto</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #f72585; margin-bottom: 15px;">Competenze Digitali</h3>
+                    <ul class="outcome-list">
+                        <li>Creare pagine web con HTML/CSS</li>
+                        <li>Utilizzare GitHub per progetti web</li>
+                        <li>Comprendere i principi del web publishing</li>
+                        <li>Sviluppare pensiero computazionale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <div class="tech-item">
+                <div class="tech-icon html-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h4>HTML5</h4>
+                <p>Struttura web</p>
+            </div>
+            
+            <div class="tech-item">
+                <div class="tech-icon css-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h4>CSS3</h4>
+                <p>Stile e design</p>
+            </div>
+            
+            <div class="tech-item">
+                <div class="tech-icon github-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h4>GitHub</h4>
+                <p>Hosting e versioning</p>
+            </div>
+            
+            <div class="tech-item">
+                <div class="tech-icon english-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h4>English</h4>
+                <p>Lingua e contenuto</p>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <h2 style="color: #4cc9f0; margin-bottom: 30px; text-align: center;">
+                <i class="fas fa-road"></i> Percorso di Apprendimento
+            </h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3 style="color: #f72585;">Fase 1: Studio della Canzone</h3>
+                    <p>Analisi del testo inglese, traduzione, studio del vocabolario e delle strutture grammaticali presenti in "Take the Long Way Home".</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3 style="color: #f72585;">Fase 2: Progettazione Web</h3>
+                    <p>Creazione della struttura HTML e design CSS per presentare i contenuti in modo efficace e accattivante.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3 style="color: #f72585;">Fase 3: Pubblicazione su GitHub</h3>
+                    <p>Configurazione di una repository GitHub e pubblicazione del sito web tramite GitHub Pages.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h3 style="color: #f72585;">Fase 4: Espansione e Personalizzazione</h3>
+                    <p>Aggiunta di nuove funzionalità, personalizzazione del design e creazione di contenuti originali.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="uda_corso_web.html" class="cta-btn start-learning">
+                <i class="fas fa-play-circle"></i>
+                <span>Inizia il Corso Web</span>
+            </a>
+            
+            <a href="index.html" class="cta-btn view-project">
+                <i class="fas fa-eye"></i>
+                <span>Vedi il Progetto Completato</span>
+            </a>
+        </div>
+        
+        <footer>
+            <p>UDA: English & Tech Fusion - Unità di Apprendimento Interdisciplinare</p>
+            <p>Per Scuole Secondarie di Primo e Secondo Grado</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                <i class="fas fa-user-graduate"></i> Competenze: Lingua Inglese, Tecnologia, Informatica, Educazione Digitale
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
