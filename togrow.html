@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Grow - Impara l'Inglese con le Canzoni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a4a2e 0%, #2d6e4a 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4cc9f0;
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .word-display {
+            font-size: 4rem;
+            color: #2a9d8f;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .pronunciation {
+            color: #a9e4f9;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(76, 201, 240, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .section-title {
+            color: #2a9d8f;
+            border-bottom: 1px solid rgba(42, 157, 143, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .meaning-box {
+            background: rgba(42, 157, 143, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #2a9d8f;
+        }
+        
+        .example-box {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4cc9f0;
+        }
+        
+        .example-sentence {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid #f72585;
+        }
+        
+        .english {
+            color: #2a9d8f;
+            font-weight: bold;
+        }
+        
+        .italian {
+            color: #a9e4f9;
+            font-style: italic;
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        
+        .song-example {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid #f72585;
+        }
+        
+        .tip-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px dashed #2a9d8f;
+        }
+        
+        .related-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .word-chip {
+            background: rgba(76, 201, 240, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #4cc9f0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        .practice-box {
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.1), rgba(76, 201, 240, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .verb-forms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .verb-form {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .verb-form h4 {
+            color: #f72585;
+            margin-bottom: 10px;
+        }
+        
+        .growth-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 25px 0;
+            gap: 20px;
+        }
+        
+        .growth-icon {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .growth-icon i {
+            font-size: 3rem;
+            color: #2a9d8f;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .word-display {
+                font-size: 3rem;
+            }
+            
+            .verb-forms {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-seedling"></i> Parola Chiave: To Grow</h1>
+            <div class="word-display">TO GROW</div>
+            <div class="pronunciation"><i class="fas fa-volume-up"></i> Pronuncia: <strong>/ɡroʊ/</strong> (groh)</div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna alla Pagina Principale
+            </a>
+        </header>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-book"></i> Significato e Traduzione</h2>
+            
+            <div class="meaning-box">
+                <h3><i class="fas fa-language"></i> Traduzione Italiana:</h3>
+                <p style="font-size: 1.3rem; color: #2a9d8f; margin: 10px 0;"><strong>CRESCERE • COLTIVARE • SVILUPPARSI</strong></p>
+                <p>Verbo che indica sia la crescita fisica (piante, persone) sia la crescita personale e maturazione. Nella canzone ha un significato metaforico di maturare attraverso le esperienze di vita.</p>
+            </div>
+            
+            <div class="song-example">
+                <h3><i class="fas fa-music"></i> Nella nostra canzone:</h3>
+                <p>Nel testo di "Take the Long Way Home", la parola appare nel verso:</p>
+                <p style="font-size: 1.2rem; color: #4cc9f0; margin: 15px 0; font-style: italic;">
+                    "Oh, it has to be for you to grow, boy"
+                </p>
+                <p>Che significa: <strong>"Oh, deve essere così affinché tu cresca, ragazzo"</strong></p>
+                <p>Metafora: le difficoltà della vita servono per maturare e diventare persone migliori.</p>
+            </div>
+            
+            <div class="growth-icons">
+                <div class="growth-icon">
+                    <i class="fas fa-seedling"></i>
+                    <p>Crescita Fisica<br>(piante)</p>
+                </div>
+                <div class="growth-icon">
+                    <i class="fas fa-child"></i>
+                    <p>Crescita Personale<br>(persone)</p>
+                </div>
+                <div class="growth-icon">
+                    <i class="fas fa-chart-line"></i>
+                    <p>Sviluppo<br>(business)</p>
+                </div>
+                <div class="growth-icon">
+                    <i class="fas fa-brain"></i>
+                    <p>Maturazione<br>(mente)</p>
+                </div>
+            </div>
+            
+            <div class="verb-forms">
+                <div class="verb-form">
+                    <h4>Presente</h4>
+                    <p>I grow</p>
+                    <p>You grow</p>
+                    <p>He/She/It grows</p>
+                </div>
+                
+                <div class="verb-form">
+                    <h4>Passato</h4>
+                    <p>I grew</p>
+                    <p>You grew</p>
+                    <p>He/She/It grew</p>
+                </div>
+                
+                <div class="verb-form">
+                    <h4>Participio</h4>
+                    <p>I have grown</p>
+                    <p>You have grown</p>
+                    <p>He/She/It has grown</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-comment-alt"></i> Frasi di Esempio per Imparare</h2>
+            
+            <div class="example-box">
+                <h3><i class="fas fa-star"></i> 4 Frasi Semplici per Praticare:</h3>
+                
+                <div class="example-sentence">
+                    <div class="english">1. Children grow very quickly.</div>
+                    <div class="italian">I bambini crescono molto in fretta.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">2. We grow vegetables in our garden.</div>
+                    <div class="italian">Coltiviamo verdure nel nostro giardino.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">3. I want to grow as a person.</div>
+                    <div class="italian">Voglio crescere come persona.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">4. The business continues to grow.</div>
+                    <div class="italian">L'attività continua a crescere.</div>
+                </div>
+            </div>
+            
+            <div class="practice-box">
+                <h3><i class="fas fa-pencil-alt"></i> Esercizio Pratico:</h3>
+                <p>Completa le frasi con la forma corretta di "grow":</p>
+                <p style="margin: 10px 0;">1. Last year, the tree ______ very tall. (grew / grown)</p>
+                <p style="margin: 10px 0;">2. I have ______ tomatoes for five years. (grew / grown)</p>
+                <p style="margin: 10px 0;">3. She ______ three centimeters last month. (grows / grew)</p>
+                <p><em>Risposte: 1. grew, 2. grown, 3. grew</em></p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Espressioni con "Grow"</h2>
+            
+            <div class="tip-box">
+                <h3><i class="fas fa-comments"></i> Espressioni Comuni</h3>
+                <p><strong>Grow up</strong> → Crescere, diventare adulto</p>
+                <p><strong>Grow out of</strong> → Superare (un'abitudine, vestiti)</p>
+                <p><strong>Grow on someone</strong> → Piacere sempre di più</p>
+                <p><strong>Grow apart</strong> → Allontanarsi (nelle relazioni)</p>
+            </div>
+            
+            <div class="tip-box">
+                <h3><i class="fas fa-brain"></i> Trucco per la Memoria:</h3>
+                <p>Pensa a "GROW" come "G-ROW".</p>
+                <p>"G" come in "Green" (verde, le piante) + "ROW" (fila).</p>
+                <p>Immagina una fila di piante verdi che crescono!</p>
+            </div>
+            
+            <h3><i class="fas fa-link"></i> Parole Correlate:</h3>
+            <div class="related-words">
+                <div class="word-chip">Grow (crescere)</div>
+                <div class="word-chip">Growth (crescita)</div>
+                <div class="word-chip">Grower (coltivatore)</div>
+                <div class="word-chip">Grown-up (adulto)</div>
+                <div class="word-chip">Develop (sviluppare)</div>
+                <div class="word-chip">Increase (aumentare)</div>
+                <div class="word-chip">Mature (maturare)</div>
+                <div class="word-chip">Cultivate (coltivare)</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="stage.html" class="back-btn" style="margin-right: 15px; background: rgba(114, 9, 183, 0.1);">
+                <i class="fas fa-arrow-left"></i> Parola Precedente: Stage
+            </a>
+            <a href="index.html" class="back-btn" style="background: rgba(247, 37, 133, 0.1);">
+                <i class="fas fa-home"></i> Torna alla Home
+            </a>
+        </div>
+        
+        <footer>
+            <p>Corso d'Inglese con le Canzoni - Approfondimento Parola: "To Grow"</p>
+            <p>Supertramp "Take the Long Way Home" - Utilizzo Didattico</p>
+            <p style="margin-top: 10px; font-size
