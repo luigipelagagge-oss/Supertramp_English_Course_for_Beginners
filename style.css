@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #f1f1f1;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+ 
+/* ... e tutto il resto del CSS fino alla fine del blocco style ... */
