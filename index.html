@@ -154,38 +154,65 @@
         }
         
         .navigation {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 50px;
-            flex-wrap: wrap;
-            gap: 20px;
         }
         
         .nav-btn {
-            flex: 1;
-            min-width: 250px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
+            gap: 20px;
+            padding: 25px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(76, 201, 240, 0.3);
-            border-radius: 10px;
+            border-radius: 12px;
             color: white;
             text-decoration: none;
             font-size: 1.1rem;
             transition: all 0.3s;
+            min-height: 120px;
         }
         
         .nav-btn:hover {
             background: rgba(76, 201, 240, 0.1);
             border-color: #4cc9f0;
+            transform: translateY(-5px);
         }
         
         .nav-btn i {
-            font-size: 1.5rem;
+            font-size: 2.2rem;
             color: #4cc9f0;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .nav-btn-content {
+            flex: 1;
+        }
+        
+        .nav-btn-title {
+            font-size: 1.3rem;
+            color: #4cc9f0;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .nav-btn-desc {
+            color: #a9e4f9;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .beginner-badge {
+            background: #f72585;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
         }
         
         footer {
@@ -237,6 +264,46 @@
             visibility: visible;
             opacity: 1;
         }
+        
+        .beginner-section {
+            background: linear-gradient(135deg, rgba(247, 37, 133, 0.1), rgba(67, 97, 238, 0.1));
+            border: 2px dashed #f72585;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .beginner-section h3 {
+            color: #f72585;
+            margin-bottom: 15px;
+        }
+        
+        .beginner-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .beginner-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(247, 37, 133, 0.2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 1px solid #f72585;
+            transition: all 0.3s;
+        }
+        
+        .beginner-link:hover {
+            background: rgba(247, 37, 133, 0.4);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -244,7 +311,25 @@
         <header>
             <h1><i class="fas fa-music"></i> Corso d'Inglese con le Canzoni</h1>
             <p class="subtitle">Impara la grammatica inglese attraverso l'analisi del testo di <span class="song-title">"Take the Long Way Home"</span> dei Supertramp</p>
+            <p style="margin-top: 15px; color: #a9e4f9; font-size: 1rem;">
+                <i class="fas fa-users"></i> Per tutti i livelli: da principianti assoluti a studenti intermedi
+            </p>
         </header>
+        
+        <div class="beginner-section">
+            <h3><i class="fas fa-baby"></i> Sei un principiante assoluto?</h3>
+            <p>Inizia da qui con le introduzioni semplificate:</p>
+            <div class="beginner-links">
+                <a href="resume_italiano.html" class="beginner-link">
+                    <i class="fas fa-flag"></i>
+                    <span>Introduzione in Italiano</span>
+                </a>
+                <a href="resume_english.html" class="beginner-link">
+                    <i class="fas fa-globe"></i>
+                    <span>Introduction in English</span>
+                </a>
+            </div>
+        </div>
         
         <div class="main-content">
             <div>
@@ -339,19 +424,35 @@
         </div>
         
         <div class="navigation">
+            <a href="resume_italiano.html" class="nav-btn">
+                <i class="fas fa-flag"></i>
+                <div class="nav-btn-content">
+                    <span class="nav-btn-title">Per Principianti Assoluti <span class="beginner-badge">START HERE</span></span>
+                    <span class="nav-btn-desc">Introduzione completa in italiano per chi parte da zero. Spiegazioni semplici e approccio graduale.</span>
+                </div>
+            </a>
+            
+            <a href="resume_english.html" class="nav-btn">
+                <i class="fas fa-globe"></i>
+                <div class="nav-btn-content">
+                    <span class="nav-btn-title">For Absolute Beginners <span class="beginner-badge">ENGLISH</span></span>
+                    <span class="nav-btn-desc">Simple English introduction for complete beginners. Basic vocabulary and easy explanations.</span>
+                </div>
+            </a>
+            
             <a href="testo_originale.html" class="nav-btn">
                 <i class="fas fa-file-alt"></i>
-                <div>
-                    <strong>Testo Originale</strong>
-                    <div>Analisi completa del testo in inglese</div>
+                <div class="nav-btn-content">
+                    <span class="nav-btn-title">Testo Originale Completo</span>
+                    <span class="nav-btn-desc">Analisi dettagliata del testo inglese con evidenziazioni grammaticali e spiegazioni.</span>
                 </div>
             </a>
             
             <a href="traduzione_studio.html" class="nav-btn">
                 <i class="fas fa-exchange-alt"></i>
-                <div>
-                    <strong>Traduzione & Studio</strong>
-                    <div>Traduzione italiana e percorso di apprendimento</div>
+                <div class="nav-btn-content">
+                    <span class="nav-btn-title">Traduzione & Percorso di Studio</span>
+                    <span class="nav-btn-desc">Traduzione italiana completa ed esercizi guidati per consolidare l'apprendimento.</span>
                 </div>
             </a>
         </div>
@@ -359,7 +460,60 @@
         <footer>
             <p>Corso creato per l'apprendimento dell'inglese attraverso la musica | Supertramp - "Take the Long Way Home"</p>
             <p>Per uso didattico - Testo e traduzione a scopo illustrativo</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                <i class="fas fa-code"></i> Progetto GitHub: Supertramp_English_Course_for_Beginners
+            </p>
         </footer>
     </div>
+
+    <script>
+        // Aggiungi un piccolo script per migliorare l'esperienza utente
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aggiungi un effetto di caricamento ai pulsanti
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Aggiungi un effetto di caricamento
+                    this.style.opacity = '0.8';
+                    this.style.transform = 'scale(0.98)';
+                    
+                    // Se il link è esterno (YouTube), non fare nulla di speciale
+                    if (this.href.includes('youtube.com') || this.href.includes('youtu.be')) {
+                        return;
+                    }
+                    
+                    // Per i link interni, possiamo aggiungere un piccolo ritardo per effetto
+                    setTimeout(() => {
+                        this.style.opacity = '';
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+            
+            // Aggiungi effetto hover migliorato ai tooltip
+            const tooltips = document.querySelectorAll('.tooltip');
+            tooltips.forEach(tooltip => {
+                tooltip.addEventListener('mouseenter', function() {
+                    const tooltipText = this.querySelector('.tooltip-text');
+                    if (tooltipText) {
+                        tooltipText.style.visibility = 'visible';
+                        tooltipText.style.opacity = '1';
+                    }
+                });
+                
+                tooltip.addEventListener('mouseleave', function() {
+                    const tooltipText = this.querySelector('.tooltip-text');
+                    if (tooltipText) {
+                        tooltipText.style.visibility = 'hidden';
+                        tooltipText.style.opacity = '0';
+                    }
+                });
+            });
+            
+            // Messaggio di benvenuto nella console (opzionale)
+            console.log('🎵 Benvenuto nel Corso d\'Inglese con le Canzoni! 🎵');
+            console.log('🎶 Impara l\'inglese con "Take the Long Way Home" dei Supertramp');
+        });
+    </script>
 </body>
 </html>
