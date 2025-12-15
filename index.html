@@ -5,349 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corso d'Inglese con le Canzoni: Take the Long Way Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #f1f1f1;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 1px solid #4cc9f0;
-            box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
-        }
-        
-        h1 {
-            color: #4cc9f0;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        
-        .subtitle {
-            color: #a9e4f9;
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .song-title {
-            color: #f72585;
-            font-weight: bold;
-            font-style: italic;
-        }
-        
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 900px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(76, 201, 240, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card-title {
-            color: #4cc9f0;
-            border-bottom: 2px solid #f72585;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .card-title i {
-            color: #f72585;
-        }
-        
-        h3 {
-            color: #a9e4f9;
-            margin: 20px 0 10px;
-        }
-        
-        ul, ol {
-            padding-left: 25px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .example {
-            background: rgba(76, 201, 240, 0.1);
-            border-left: 4px solid #4cc9f0;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .highlight {
-            color: #f72585;
-            font-weight: bold;
-        }
-        
-        .video-section {
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .video-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(to right, #f72585, #b5179e);
-            color: white;
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
-        }
-        
-        .video-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.6);
-        }
-        
-        .video-btn i {
-            font-size: 1.5rem;
-        }
-        
-        .navigation {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(76, 201, 240, 0.3);
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            min-height: 120px;
-        }
-        
-        .nav-btn:hover {
-            background: rgba(76, 201, 240, 0.1);
-            border-color: #4cc9f0;
-            transform: translateY(-5px);
-        }
-        
-        .nav-btn i {
-            font-size: 2.2rem;
-            color: #4cc9f0;
-            min-width: 50px;
-            text-align: center;
-        }
-        
-        .nav-btn-content {
-            flex: 1;
-        }
-        
-        .nav-btn-title {
-            font-size: 1.3rem;
-            color: #4cc9f0;
-            margin-bottom: 8px;
-            display: block;
-        }
-        
-        .nav-btn-desc {
-            color: #a9e4f9;
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-        
-        .beginner-badge {
-            background: #f72585;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #a9e4f9;
-            font-size: 0.9rem;
-        }
-        
-        .grammar-icon {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: #4361ee;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .tooltip {
-            position: relative;
-            cursor: pointer;
-            border-bottom: 1px dashed #4cc9f0;
-        }
-        
-        .tooltip-text {
-            visibility: hidden;
-            width: 250px;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 10px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .tooltip:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .beginner-section {
-            background: linear-gradient(135deg, rgba(247, 37, 133, 0.1), rgba(67, 97, 238, 0.1));
-            border: 2px dashed #f72585;
-            margin: 30px 0;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .beginner-section h3 {
-            color: #f72585;
-            margin-bottom: 15px;
-        }
-        
-        .beginner-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        
-        .beginner-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(247, 37, 133, 0.2);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            border: 1px solid #f72585;
-            transition: all 0.3s;
-        }
-        
-        .beginner-link:hover {
-            background: rgba(247, 37, 133, 0.4);
-            transform: scale(1.05);
-        }
-        
-        .key-words-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .key-word-item {
-            margin-bottom: 12px;
-        }
-        
-        .key-word-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #4cc9f0;
-            text-decoration: none;
-            padding: 8px 15px;
-            background: rgba(76, 201, 240, 0.1);
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        
-        .key-word-link:hover {
-            background: rgba(76, 201, 240, 0.2);
-            transform: translateX(5px);
-        }
-        
-        .key-word-icon {
-            color: #f72585;
-        }
-        
-        .external-link-icon {
-            margin-left: auto;
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <div class="container">
         <header>
             <h1><i class="fas fa-music"></i> Corso d'Inglese con le Canzoni</h1>
             <p class="subtitle">Impara la grammatica inglese attraverso l'analisi del testo di <span class="song-title">"Take the Long Way Home"</span> dei Supertramp</p>
-            <p style="margin-top: 15px; color: #a9e4f9; font-size: 1rem;">
+            <p class="info-header-text">
                 <i class="fas fa-users"></i> Per tutti i livelli: da principianti assoluti a studenti intermedi
             </p>
         </header>
@@ -427,7 +92,7 @@
                     <p><span class="highlight">Durata:</span> 5:08 minuti</p>
                     <p><span class="highlight">Autori:</span> Rick Davies e Roger Hodgson</p>
                     
-                    <h3>Parole Chiave nel Testo <span style="font-size: 0.9rem; color: #f72585;">(clicca per approfondire)</span></h3>
+                    <h3>Parole Chiave nel Testo <span class="key-words-tip">(clicca per approfondire)</span></h3>
                     <ul class="key-words-list">
                         <li class="key-word-item">
                             <a href="neighborhood.html" class="key-word-link">
@@ -484,7 +149,7 @@
         <div class="video-section">
             <h2>Guarda il Video Ufficiale</h2>
             <p>Ascolta la canzone originale mentre segui il testo per un'esperienza completa di apprendimento.</p>
-            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="video-btn">
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="video-btn" rel="noopener noreferrer">
                 <i class="fab fa-youtube"></i> Guarda "Take the Long Way Home" su YouTube
             </a>
         </div>
@@ -527,17 +192,17 @@
             <h2 class="card-title"><i class="fas fa-code"></i> Vuoi Imparare a Creare un Sito Come Questo?</h2>
             <p>Questo corso di inglese è anche un esempio pratico di sviluppo web. Scopri come abbiamo costruito questo sito e impara a crearne uno tuo!</p>
             
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
-                <a href="uda_introduzione.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #4cc9f0, #4361ee); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold;">
+            <div class="uda-cta-container">
+                <a href="uda_introduzione.html" class="uda-btn-intro">
                     <i class="fas fa-book-open"></i> Scopri l'UDA Interdisciplinare
                 </a>
                 
-                <a href="uda_corso_web.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(247, 37, 133, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #f72585;">
+                <a href="uda_corso_web.html" class="uda-btn-web">
                     <i class="fas fa-laptop-code"></i> Inizia il Corso Web
                 </a>
             </div>
             
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #a9e4f9;">
+            <p class="uda-cta-tip">
                 <i class="fas fa-lightbulb"></i> Impara inglese E tecnologia nello stesso progetto!
             </p>
         </div>
@@ -550,32 +215,14 @@
             </p>
         </footer>
     </div>
-
+    
     <script>
-        // Aggiungi un piccolo script per migliorare l'esperienza utente
         document.addEventListener('DOMContentLoaded', function() {
-            // Aggiungi un effetto di caricamento ai pulsanti
-            const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    // Aggiungi un effetto di caricamento
-                    this.style.opacity = '0.8';
-                    this.style.transform = 'scale(0.98)';
-                    
-                    // Se il link è esterno (YouTube), non fare nulla di speciale
-                    if (this.href.includes('youtube.com') || this.href.includes('youtu.be')) {
-                        return;
-                    }
-                    
-                    // Per i link interni, possiamo aggiungere un piccolo ritardo per effetto
-                    setTimeout(() => {
-                        this.style.opacity = '';
-                        this.style.transform = '';
-                    }, 300);
-                });
-            });
+            // Messaggio di benvenuto nella console (opzionale)
+            console.log('🎵 Benvenuto nel Corso d\'Inglese con le Canzoni! 🎵');
+            console.log('🎶 Impara l\'inglese con "Take the Long Way Home" dei Supertramp');
             
-            // Aggiungi effetto hover migliorato ai tooltip
+            // Logica dei Tooltip (mantuta, come da file originale)
             const tooltips = document.querySelectorAll('.tooltip');
             tooltips.forEach(tooltip => {
                 tooltip.addEventListener('mouseenter', function() {
@@ -594,11 +241,6 @@
                     }
                 });
             });
-            
-            // Messaggio di benvenuto nella console (opzionale)
-            console.log('🎵 Benvenuto nel Corso d\'Inglese con le Canzoni! 🎵');
-            console.log('🎶 Impara l\'inglese con "Take the Long Way Home" dei Supertramp');
-            console.log('🔗 Tutti i link sono stati verificati e dovrebbero funzionare correttamente');
         });
     </script>
 </body>
