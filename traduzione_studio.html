@@ -1,15 +1,366 @@
-<!-- Aggiungi questa card subito dopo l'header nel index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traduzione - Take the Long Way Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(76, 201, 240, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+        }
+        
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .comparison-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .column {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .column-title {
+            color: #f72585;
+            border-bottom: 2px solid #4cc9f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lyrics-column {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            white-space: pre-line;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        
+        .chorus {
+            color: #4cc9f0;
+            font-weight: bold;
+            margin: 15px 0;
+            padding-left: 15px;
+            border-left: 3px solid #f72585;
+        }
+        
+        .translation-note {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .study-path {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .step-number {
+            background: #f72585;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .exercise-box {
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .exercise-title {
+            color: #4cc9f0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        .metafora-box {
+            background: rgba(114, 9, 183, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid #7209b7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-exchange-alt"></i> Traduzione Italiana</h1>
+            <p>Traduzione completa di "Take the Long Way Home"</p>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna alla Pagina Principale
+            </a>
+        </header>
+        
+        <div class="comparison-section">
+            <div class="column">
+                <h2 class="column-title"><i class="fas fa-language"></i> Testo Inglese</h2>
+                <div class="lyrics-column">
+So, you think you're a Romeo
+Playing a part in a picture show
+Well, take the long way home
+Take the long way home
+'Cause you're the joke of the neighborhood
+Why should you care if you're feelin' good?
+Well, take the long way home
+Take the long way home
 
-<div class="card" style="border: 2px solid #f72585; background: rgba(247, 37, 133, 0.1);">
-    <h2 class="card-title"><i class="fas fa-exclamation-circle"></i> IMPORTANTE: TESTO COMPLETO</h2>
-    <p><strong>Aggiornamento:</strong> Abbiamo corretto il testo con la versione COMPLETA della canzone (5:08 minuti).</p>
-    <p>Ora include tutte le parti spesso omesse nelle versioni radio. Scopri le nuove metafore e il vocabolario aggiuntivo!</p>
-    <div style="display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
-        <a href="testo_originale.html" style="display: inline-flex; align-items: center; gap: 8px; background: #f72585; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
-            <i class="fas fa-file-alt"></i> Vedi Testo Completo
-        </a>
-        <a href="traduzione_studio.html" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(76, 201, 240, 0.2); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; border: 1px solid #4cc9f0;">
-            <i class="fas fa-exchange-alt"></i> Vedi Traduzione Completa
-        </a>
+There are times that you feel you're part of the scenery
+All the greenery is comin' down, boy
+And then your wife seems to think you're part of the furniture
+Oh, it's peculiar, she used to be so nice
+
+When lonely days turn to lonely nights
+You take a trip to the city lights
+And take the long way home
+Take the long way home
+
+You never see what you want to see
+Forever playing to the gallery
+You take the long way home
+Take the long way home
+
+When you're up on the stage, it's so unbelievable
+Oh, unforgettable, how they adore you
+But then your wife seems to think you're losing your sanity
+Oh, calamity, is there no way out?
+
+Does it feel that your life's become a catastrophe?
+Oh, it has to be, for you to grow, boy
+When you look through the years and see what you could have been
+Oh, what you might have been
+If you would have more time
+
+So when the day comes to settle down
+Who's to blame if you're not around?
+You took the long way home
+You took the long way home
+
+<div class="chorus">You took the long way home
+You took the long way home
+You took the long way home
+You took the long way home
+You took the long way home
+You took the long way home</div>
+
+Long way home
+Long way home
+Long way home
+Long way home
+Long way home
+Long way home
+Long way home
+                </div>
+            </div>
+            
+            <div class="column">
+                <h2 class="column-title"><i class="fas fa-flag"></i> Traduzione Italiana</h2>
+                <div class="lyrics-column">
+Allora, pensi di essere un Romeo
+Che recita una parte in uno spettacolo
+Beh, prendi la strada più lunga per tornare a casa
+Prendi la strada più lunga per tornare a casa
+Perché sei lo zimbello del quartiere
+Perché dovrebbe importarti se ti senti bene?
+Beh, prendi la strada più lunga per tornare a casa
+Prendi la strada più lunga per tornare a casa
+
+Ci sono momenti in cui ti senti parte dello scenario
+Tutta la vegetazione sta cadendo, ragazzo
+E poi tua moglie sembra pensare che tu sia parte dell'arredamento
+Oh, è strano, una volta era così gentile
+
+Quando i giorni solitari diventano notti solitarie
+Fai un viaggio verso le luci della città
+E prendi la strada più lunga per tornare a casa
+Prendi la strada più lunga per tornare a casa
+
+Non vedi mai quello che vorresti vedere
+A recitare sempre per il pubblico
+Prendi la strada più lunga per tornare a casa
+Prendi la strada più lunga per tornare a casa
+
+Quando sei sul palco, è così incredibile
+Oh, indimenticabile, come ti adorano
+Ma poi tua moglie sembra pensare che tu stia perdendo la sanità mentale
+Oh, calamità, non c'è via d'uscita?
+
+Ti senti come se la tua vita fosse diventata una catastrofe?
+Oh, deve essere così, affinché tu cresca, ragazzo
+Quando guardi attraverso gli anni e vedi cosa avresti potuto essere
+Oh, cosa saresti potuto essere
+Se avessi avuto più tempo
+
+E così quando arriva il giorno di sistemarsi
+Di chi è la colpa se non ci sei?
+Hai preso la strada più lunga per tornare a casa
+Hai preso la strada più lunga per tornare a casa
+
+<div class="chorus">Hai preso la strada più lunga per tornare a casa
+Hai preso la strada più lunga per tornare a casa
+Hai preso la strada più lunga per tornare a casa
+Hai preso la strada più lunga per tornare a casa
+Hai preso la strada più lunga per tornare a casa
+Hai preso la strada più lunga per tornare a casa</div>
+
+Strada lunga per casa
+Strada lunga per casa
+Strada lunga per casa
+Strada lunga per casa
+Strada lunga per casa
+Strada lunga per casa
+Strada lunga per casa
+                </div>
+            </div>
+        </div>
+        
+        <div class="metafora-box">
+            <h3><i class="fas fa-lightbulb"></i> Metafore Importanti</h3>
+            <p><strong>"Part of the scenery"</strong> → "Parte dello scenario" = sentirsi invisibile come lo sfondo</p>
+            <p><strong>"Part of the furniture"</strong> → "Parte dell'arredamento" = essere dato per scontato come un mobile</p>
+            <p><strong>"Playing to the gallery"</strong> → "Recitare per il pubblico" = cercare l'approvazione degli altri</p>
+            <p><strong>"Take the long way home"</strong> → "Prendere la strada più lunga" = riflettere invece di correre</p>
+        </div>
+        
+        <div class="study-path">
+            <h2 class="column-title"><i class="fas fa-graduation-cap"></i> Come Studiare con Questo Testo</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                    <h3>Ascolta e Leggi</h3>
+                    <p>Ascolta la canzone mentre leggi il testo inglese. Poi riascolta leggendo la traduzione.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    <h3>Identifica le Metafore</h3>
+                    <p>Cerca nel testo le metafore elencate sopra. Cerca di capire perché sono usate.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    <h3>Analizza la Struttura</h3>
+                    <p>La canzone racconta una storia. Prova a dividerla in parti: introduzione, sviluppo, crisi, conclusione.</p>
+                </div>
+            </div>
+            
+            <div class="exercise-box">
+                <div class="exercise-title"><i class="fas fa-pencil-alt"></i> Esercizio</div>
+                <p>Trova nel testo inglese e traduci:</p>
+                <p>1. Una frase che parla di teatro ("stage", "gallery", "picture show")</p>
+                <p>2. Una frase che descrive un sentimento negativo ("catastrophe", "calamity")</p>
+                <p>3. Una metafora spaziale ("long way home", "city lights")</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #f72585, #b5179e); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-right: 15px;">
+                <i class="fab fa-youtube"></i> Ascolta la Canzone
+            </a>
+            <a href="significato_profondo.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(114, 9, 183, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #7209b7;">
+                <i class="fas fa-brain"></i> Approfondisci il Significato
+            </a>
+        </div>
+        
+        <footer>
+            <p>Traduzione italiana completa - Supertramp "Take the Long Way Home"</p>
+        </footer>
     </div>
-</div>
+</body>
+</html>
