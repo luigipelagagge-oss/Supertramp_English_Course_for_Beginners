@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corso Web Development - UDA English & Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #4cc9f0;
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .course-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #f72585, #b5179e);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(76, 201, 240, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .lesson-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 900px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .lesson-sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .lesson-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .lesson-list {
+            list-style-type: none;
+        }
+        
+        .lesson-item {
+            margin-bottom: 15px;
+        }
+        
+        .lesson-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+        
+        .lesson-link:hover {
+            background: rgba(76, 201, 240, 0.1);
+            border-left-color: #4cc9f0;
+        }
+        
+        .lesson-link.active {
+            background: rgba(76, 201, 240, 0.15);
+            border-left-color: #f72585;
+            color: white;
+        }
+        
+        .lesson-number {
+            background: #4cc9f0;
+            color: #1a1a2e;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .lesson-title {
+            font-size: 1.1rem;
+            color: #f72585;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .code-example {
+            background: #0f1421;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #f72585;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .code-comment {
+            color: #6c757d;
+        }
+        
+        .html-tag {
+            color: #e34c26;
+        }
+        
+        .css-property {
+            color: #264de4;
+        }
+        
+        .css-value {
+            color: #4cc9f0;
+        }
+        
+        .step-box {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid #f72585;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #f72585;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .practice-box {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px dashed #4cc9f0;
+        }
+        
+        .practice-title {
+            color: #4cc9f0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .prev-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #a9e4f9;
+            border: 1px solid rgba(76, 201, 240, 0.3);
+        }
+        
+        .next-btn {
+            background: linear-gradient(to right, #4cc9f0, #4361ee);
+            color: white;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-tutorial {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+        
+        .checklist {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        .checklist li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4cc9f0;
+            font-weight: bold;
+        }
+        
+        .github-steps {
+            counter-reset: step-counter;
+            margin: 30px 0;
+        }
+        
+        .github-step {
+            margin-bottom: 20px;
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .github-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #f72585;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-laptop-code"></i> Corso Pratico di Web Development</h1>
+            <div class="course-badge">PARTE TECNOLOGICA DELL'UDA</div>
+            <p>Impara a costruire un sito web mentre studi l'inglese attraverso la musica</p>
+            <a href="uda_introduzione.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna all'UDA
+            </a>
+        </header>
+        
+        <div class="lesson-container">
+            <div class="lesson-sidebar">
+                <h3 style="color: #4cc9f0; margin-bottom: 20px; text-align: center;">
+                    <i class="fas fa-list-ol"></i> Lezioni
+                </h3>
+                <ul class="lesson-list">
+                    <li class="lesson-item">
+                        <a href="#lesson1" class="lesson-link active">
+                            <div class="lesson-number">1</div>
+                            <div>
+                                <div style="font-weight: bold;">HTML Base</div>
+                                <div style="font-size: 0.9rem;">Struttura di una pagina</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#lesson2" class="lesson-link">
+                            <div class="lesson-number">2</div>
+                            <div>
+                                <div style="font-weight: bold;">CSS Styling</div>
+                                <div style="font-size: 0.9rem;">Colori e layout</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#lesson3" class="lesson-link">
+                            <div class="lesson-number">3</div>
+                            <div>
+                                <div style="font-weight: bold;">GitHub Setup</div>
+                                <div style="font-size: 0.9rem;">Crea repository</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#lesson4" class="lesson-link">
+                            <div class="lesson-number">4</div>
+                            <div>
+                                <div style="font-weight: bold;">GitHub Pages</div>
+                                <div style="font-size: 0.9rem;">Pubblica il sito</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#lesson5" class="lesson-link">
+                            <div class="lesson-number">5</div>
+                            <div>
+                                <div style="font-weight: bold;">Progetto Finale</div>
+                                <div style="font-size: 0.9rem;">Crea il tuo corso</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 10px;">
+                    <h4 style="color: #f72585; margin-bottom: 15px;">Materiali Necessari</h4>
+                    <ul class="checklist">
+                        <li>Computer con browser</li>
+                        <li>Account GitHub (gratuito)</li>
+                        <li>Editor di testo (VS Code)</li>
+                        <li>Connessione internet</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="lesson-content">
+                <div id="lesson1">
+                    <h2 class="lesson-title">
+                        <i class="fab fa-html5"></i> Lezione 1: Le Basi di HTML
+                    </h2>
+                    
+                    <p>HTML (HyperText Markup Language) è il linguaggio che struttura le pagine web. È come lo scheletro di un sito.</p>
+                    
+                    <div class="step-box">
+                        <h3><span class="step-number">1</span> Struttura Base di una Pagina HTML</h3>
+                        <p>Ogni pagina HTML inizia con questa struttura:</p>
+                        
+                        <div class="code-example">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="it"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;<span class="html-tag">Titolo della Pagina</span>&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;<span class="code-comment">&lt;!-- Qui va il contenuto della pagina --&gt;</span><br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <h3><span class="step-number">2</span> Tag HTML Essenziali</h3>
+                        <p>I "tag" sono gli elementi che compongono una pagina HTML:</p>
+                        
+                        <div class="code-example">
+<span class="code-comment">&lt;!-- Titoli --&gt;</span><br>
+&lt;h1&gt;<span class="html-tag">Titolo Principale</span>&lt;/h1&gt;<br>
+&lt;h2&gt;<span class="html-tag">Sottotitolo</span>&lt;/h2&gt;<br>
+<br>
+<span class="code-comment">&lt;!-- Paragrafi --&gt;</span><br>
+&lt;p&gt;<span class="html-tag">Questo è un paragrafo di testo.</span>&lt;/p&gt;<br>
+<br>
+<span class="code-comment">&lt;!-- Link --&gt;</span><br>
+&lt;a href="<span class="html-tag">https://esempio.com</span>"&gt;<span class="html-tag">Testo del Link</span>&lt;/a&gt;<br>
+<br>
+<span class="code-comment">&lt;!-- Liste --&gt;</span><br>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;<span class="html-tag">Elemento 1</span>&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;<span class="html-tag">Elemento 2</span>&lt;/li&gt;<br>
+&lt;/ul&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="practice-box">
+                        <h3 class="practice-title"><i class="fas fa-pencil-alt"></i> Esercizio Pratico</h3>
+                        <p>Crea il file <code>index.html</code> del tuo corso di inglese con questa struttura:</p>
+                        <ol style="margin: 15px 0; padding-left: 25px;">
+                            <li>Apri un editor di testo (Blocco note, VS Code, ecc.)</li>
+                            <li>Copia la struttura HTML base sopra</li>
+                            <li>Aggiungi un titolo h1 con il nome del tuo corso</li>
+                            <li>Aggiungi un paragrafo p con una breve descrizione</li>
+                            <li>Crea una lista ul con 3 argomenti che imparerai</li>
+                            <li>Salva il file come <code>index.html</code></li>
+                        </ol>
+                    </div>
+                    
+                    <div class="video-tutorial">
+                        <h3 style="color: #4cc9f0; margin-bottom: 15px;">
+                            <i class="fab fa-youtube"></i> Video Tutorial Consigliato
+                        </h3>
+                        <p>Guarda questo video per imparare le basi dell'HTML (in italiano):</p>
+                        <a href="https://youtu.be/dD2EISBDjWM" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: #ff0000; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; margin-top: 15px;">
+                            <i class="fab fa-youtube"></i> HTML per Principianti
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <a href="uda_introduzione.html" class="nav-button prev-btn">
+                        <i class="fas fa-arrow-left"></i> Lezione Precedente
+                    </a>
+                    <a href="#lesson2" class="nav-button next-btn">
+                        Lezione 2: CSS Styling <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>UDA English & Tech Fusion - Corso di Web Development</p>
+            <p>Lezione 1 di 5 - Competenze Digitali di Base</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Script per la navigazione tra le lezioni
+        document.addEventListener('DOMContentLoaded', function() {
+            const lessonLinks = document.querySelectorAll('.lesson-link');
+            const lessonSections = document.querySelectorAll('.lesson-content > div[id]');
+            
+            // Nascondi tutte le lezioni tranne la prima
+            lessonSections.forEach((section, index) => {
+                if (index > 0) {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Gestisci click sui link delle lezioni
+            lessonLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Rimuovi classe active da tutti i link
+                    lessonLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Aggiungi classe active al link cliccato
+                    this.classList.add('active');
+                    
+                    // Nascondi tutte le sezioni
+                    lessonSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Mostra la sezione corrispondente
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Gestisci il pulsante "Lezione Successiva"
+            const nextButton = document.querySelector('.next-btn');
+            if (nextButton) {
+                nextButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Trova la lezione attiva
+                    const activeLink = document.querySelector('.lesson-link.active');
+                    const nextLesson = activeLink.parentElement.nextElementSibling;
+                    
+                    if (nextLesson) {
+                        const nextLink = nextLesson.querySelector('.lesson-link');
+                        if (nextLink) {
+                            nextLink.click();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
