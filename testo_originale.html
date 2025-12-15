@@ -5,179 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testo Originale - Take the Long Way Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            color: #f1f1f1;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            color: #4cc9f0;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #a9e4f9;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background: rgba(76, 201, 240, 0.1);
-            margin-top: 15px;
-            transition: all 0.3s;
-        }
-        
-        .back-btn:hover {
-            background: rgba(76, 201, 240, 0.2);
-        }
-        
-        .lyrics-container {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(76, 201, 240, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .lyrics-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f72585;
-        }
-        
-        .lyrics-title {
-            color: #f72585;
-            font-size: 1.8rem;
-        }
-        
-        .lyrics-content {
-            font-family: 'Courier New', monospace;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            white-space: pre-line;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 25px;
-            border-radius: 10px;
-            overflow-x: auto;
-        }
-        
-        .chorus {
-            color: #4cc9f0;
-            font-weight: bold;
-            margin: 20px 0;
-            padding-left: 20px;
-            border-left: 3px solid #f72585;
-        }
-        
-        .grammar-highlight {
-            background-color: rgba(247, 37, 133, 0.2);
-            border-radius: 3px;
-            padding: 2px 5px;
-            cursor: pointer;
-        }
-        
-        .analysis-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-        
-        .section-title {
-            color: #4cc9f0;
-            border-bottom: 1px solid rgba(76, 201, 240, 0.3);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .vocabulary-box {
-            background: rgba(42, 157, 143, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 4px solid #2a9d8f;
-        }
-        
-        .vocab-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .vocab-item {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .english-word {
-            color: #4cc9f0;
-            font-weight: bold;
-            display: block;
-        }
-        
-        .italian-word {
-            color: #f72585;
-            font-size: 0.9rem;
-            display: block;
-            margin-top: 5px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #a9e4f9;
-        }
-        
-        @media (max-width: 768px) {
-            .lyrics-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            
-            .vocab-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
+<body class="lyrics-page-body">
     <div class="container">
         <header>
             <h1><i class="fas fa-file-alt"></i> Testo Originale</h1>
@@ -190,7 +20,7 @@
         <div class="lyrics-container">
             <div class="lyrics-header">
                 <h2 class="lyrics-title"><i class="fas fa-music"></i> Testo della Canzone</h2>
-                <div style="color: #a9e4f9; font-size: 0.9rem;">
+                <div class="lyrics-info">
                     <i class="fas fa-clock"></i> Durata: 5:08
                 </div>
             </div>
@@ -286,7 +116,7 @@ Long way home
         <div class="analysis-section">
             <h3 class="section-title"><i class="fas fa-search"></i> Struttura del Testo</h3>
             <p>La canzone segue questa progressione narrativa:</p>
-            <ul style="margin: 15px 0; padding-left: 25px;">
+            <ul class="analysis-list">
                 <li><strong>Introduzione:</strong> La finzione (Romeo, picture show)</li>
                 <li><strong>Sviluppo:</strong> Sentirsi invisibile (scenery, furniture)</li>
                 <li><strong>Crisi:</strong> Problemi personali (sanity, calamity)</li>
@@ -295,18 +125,18 @@ Long way home
             </ul>
         </div>
         
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #f72585, #b5179e); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-right: 15px;">
+        <div class="bottom-cta-container">
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="video-btn-secondary" rel="noopener noreferrer">
                 <i class="fab fa-youtube"></i> Ascolta la Canzone
             </a>
-            <a href="traduzione_studio.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(76, 201, 240, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #4cc9f0;">
+            <a href="traduzione_studio.html" class="nav-btn-secondary">
                 <i class="fas fa-exchange-alt"></i> Vedi la Traduzione
             </a>
         </div>
         
         <footer>
-            <p>Supertramp "Take the Long Way Home" - Testo completo</p>
-            <p>Album: Breakfast in America (1979)</p>
+            <p class="footer-song-info">Supertramp "Take the Long Way Home" - Testo completo</p>
+            <p class="footer-song-info">Album: Breakfast in America (1979)</p>
         </footer>
     </div>
 </body>
