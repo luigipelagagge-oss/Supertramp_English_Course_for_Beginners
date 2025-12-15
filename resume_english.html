@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Course - Simple Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #4cc9f0;
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .language-level {
+            display: inline-block;
+            background: #f72585;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(76, 201, 240, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+        }
+        
+        .simple-english {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .section-title {
+            color: #f72585;
+            border-bottom: 2px solid #4cc9f0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            font-size: 1.8rem;
+        }
+        
+        .simple-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .highlight-box {
+            background: rgba(76, 201, 240, 0.1);
+            border-left: 5px solid #4cc9f0;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .word-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .word-item {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(247, 37, 133, 0.3);
+        }
+        
+        .english-word {
+            color: #4cc9f0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .meaning {
+            color: #a9e4f9;
+            font-size: 0.9rem;
+        }
+        
+        .simple-steps {
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .step-number {
+            background: #f72585;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .simple-sentence {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            border-left: 3px solid #4361ee;
+        }
+        
+        .encouragement {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(247, 37, 133, 0.2), rgba(67, 97, 238, 0.2));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 2px dashed #4cc9f0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .nav-btn {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .word-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> English Course for Absolute Beginners</h1>
+            <div class="language-level">LEVEL: BEGINNER - START HERE!</div>
+            <p>Learn English with Music - Simple and Fun Method</p>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Main Page
+            </a>
+        </header>
+        
+        <div class="simple-english">
+            <h2 class="section-title"><i class="fas fa-heart"></i> Welcome to Your English Journey!</h2>
+            
+            <div class="simple-text">
+                <p><strong>Hello!</strong> Welcome to this English course. This course is for <strong>absolute beginners</strong>. You don't need to know English to start. We learn with music!</p>
+                
+                <p>Music is a fun way to learn. Songs have simple words. Songs have repetition. Songs are easy to remember.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-lightbulb"></i> How This Course Works:</h3>
+                <p>1. We use one song: <strong>"Take the Long Way Home"</strong> by Supertramp</p>
+                <p>2. We learn <strong>simple words</strong> from the song</p>
+                <p>3. We learn <strong>basic grammar</strong> from the song</p>
+                <p>4. We <strong>listen and repeat</strong> - very important!</p>
+            </div>
+            
+            <div class="simple-steps">
+                <h2 class="section-title"><i class="fas fa-walking"></i> Your First Steps in English</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Start with Simple Words</h3>
+                        <p>Every language starts with words. Here are 5 words from our song:</p>
+                        
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span class="english-word">HOME</span>
+                                <span class="meaning">Casa (where you live)</span>
+                            </div>
+                            <div class="word-item">
+                                <span class="english-word">WAY</span>
+                                <span class="meaning">Strada/Via (road/path)</span>
+                            </div>
+                            <div class="word-item">
+                                <span class="english-word">YOU</span>
+                                <span class="meaning">Tu (person speaking to)</span>
+                            </div>
+                            <div class="word-item">
+                                <span class="english-word">GOOD</span>
+                                <span class="meaning">Buono (positive feeling)</span>
+                            </div>
+                            <div class="word-item">
+                                <span class="english-word">TIME</span>
+                                <span class="meaning">Tempo (minutes, hours)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Learn Simple Sentences</h3>
+                        <p>Words together make sentences. Here are simple sentences from the song:</p>
+                        
+                        <div class="simple-sentence">
+                            "Take the long way home"
+                        </div>
+                        
+                        <div class="simple-sentence">
+                            "You feel good"
+                        </div>
+                        
+                        <div class="simple-sentence">
+                            "Why should you care?"
+                        </div>
+                        
+                        <p>These sentences are short. They are easy to remember. You can use them in real life!</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Listen and Repeat</h3>
+                        <p>This is the most important step for beginners:</p>
+                        <ul>
+                            <li>Listen to the song many times</li>
+                            <li>Repeat the words after the singer</li>
+                            <li>Don't worry about mistakes - everyone makes mistakes!</li>
+                            <li>Practice every day, even 10 minutes is good</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="encouragement">
+                <h3><i class="fas fa-star"></i> Important Message for Beginners</h3>
+                <p style="font-size: 1.3rem; margin: 20px 0;">Learning English is a journey, not a race.</p>
+                <p>Every person learns at their own speed. Some days are easy. Some days are difficult. This is normal!</p>
+                <p>The most important thing is to <strong>continue</strong>. Listen to the song. Repeat the words. Enjoy the music!</p>
+            </div>
+            
+            <div class="simple-text">
+                <h3><i class="fas fa-music"></i> Why This Song is Good for Beginners:</h3>
+                <ul>
+                    <li>The words are <strong>clear and slow</strong> in some parts</li>
+                    <li>The chorus <strong>repeats many times</strong> - good for memory</li>
+                    <li>The song tells a <strong>simple story</strong> about life</li>
+                    <li>The music is <strong>beautiful and relaxing</strong></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="resume_italiano.html" class="nav-btn">
+                <i class="fas fa-flag"></i>
+                <div>
+                    <strong>Italian Version</strong>
+                    <div>Leggi in italiano</div>
+                </div>
+            </a>
+            
+            <a href="testo_originale.html" class="nav-btn">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                    <strong>Song Text</strong>
+                    <div>See original English text</div>
+                </div>
+            </a>
+            
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="nav-btn">
+                <i class="fab fa-youtube"></i>
+                <div>
+                    <strong>Listen Now</strong>
+                    <div>Watch the song video</div>
+                </div>
+            </a>
+        </div>
+        
+        <footer>
+            <p>English Course for Absolute Beginners - Learning with Music Method</p>
+            <p>Supertramp "Take the Long Way Home" - Educational Use Only</p>
+        </footer>
+    </div>
+</body>
+</html>
