@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood - Impara l'Inglese con le Canzoni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4cc9f0;
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .word-display {
+            font-size: 4rem;
+            color: #f72585;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .pronunciation {
+            color: #a9e4f9;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(76, 201, 240, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .section-title {
+            color: #f72585;
+            border-bottom: 1px solid rgba(247, 37, 133, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .meaning-box {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4cc9f0;
+        }
+        
+        .example-box {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f72585;
+        }
+        
+        .example-sentence {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid #4361ee;
+        }
+        
+        .english {
+            color: #4cc9f0;
+            font-weight: bold;
+        }
+        
+        .italian {
+            color: #a9e4f9;
+            font-style: italic;
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        
+        .song-example {
+            background: rgba(67, 97, 238, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid #4361ee;
+        }
+        
+        .tip-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px dashed #4cc9f0;
+        }
+        
+        .related-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .word-chip {
+            background: rgba(247, 37, 133, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #f72585;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        .practice-box {
+            background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(67, 97, 238, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .word-display {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-home"></i> Parola Chiave: Neighborhood</h1>
+            <div class="word-display">NEIGHBORHOOD</div>
+            <div class="pronunciation"><i class="fas fa-volume-up"></i> Pronuncia: <strong>/ˈneɪbərˌhʊd/</strong> (nay-ber-hud)</div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna alla Pagina Principale
+            </a>
+        </header>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-book"></i> Significato e Traduzione</h2>
+            
+            <div class="meaning-box">
+                <h3><i class="fas fa-language"></i> Traduzione Italiana:</h3>
+                <p style="font-size: 1.3rem; color: #4cc9f0; margin: 10px 0;"><strong>QUARTIERE • VICINATO • ZONA</strong></p>
+                <p>Un'area specifica di una città o paese dove le persone vivono vicine tra loro.</p>
+            </div>
+            
+            <div class="song-example">
+                <h3><i class="fas fa-music"></i> Nella nostra canzone:</h3>
+                <p>Nel testo di "Take the Long Way Home", la parola appare nel verso:</p>
+                <p style="font-size: 1.2rem; color: #f72585; margin: 15px 0; font-style: italic;">
+                    "'Cause you're the joke of the neighborhood"
+                </p>
+                <p>Che significa: <strong>"Perché sei lo zimbello del quartiere"</strong></p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-comment-alt"></i> Frasi di Esempio per Imparare</h2>
+            
+            <div class="example-box">
+                <h3><i class="fas fa-star"></i> 4 Frasi Semplici per Praticare:</h3>
+                
+                <div class="example-sentence">
+                    <div class="english">1. I live in a quiet neighborhood.</div>
+                    <div class="italian">Vivo in un quartiere tranquillo.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">2. The children play in the neighborhood park.</div>
+                    <div class="italian">I bambini giocano nel parco del quartiere.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">3. My neighborhood has many restaurants.</div>
+                    <div class="italian">Il mio quartiere ha molti ristoranti.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">4. We know all our neighbors in this neighborhood.</div>
+                    <div class="italian">Conosciamo tutti i nostri vicini in questo quartiere.</div>
+                </div>
+            </div>
+            
+            <div class="practice-box">
+                <h3><i class="fas fa-pencil-alt"></i> Esercizio Pratico:</h3>
+                <p>Prova a completare queste frasi con "neighborhood":</p>
+                <p style="margin: 15px 0;">1. The new _______________ has a beautiful library.</p>
+                <p style="margin: 15px 0;">2. Everyone is friendly in my _______________.</p>
+                <p><em>Suggerimento: Ricorda che "neighborhood" finisce con "-hood"</em></p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Consigli per Ricordare</h2>
+            
+            <div class="tip-box">
+                <h3><i class="fas fa-brain"></i> Trucco per la Memoria:</h3>
+                <p>Pensa a <strong>"neighbor"</strong> (vicino) + <strong>"hood"</strong> (come in "childhood" - infanzia).</p>
+                <p>Un "neighborhood" è il posto dove i tuoi "neighbors" (vicini) vivono insieme.</p>
+            </div>
+            
+            <div class="tip-box">
+                <h3><i class="fas fa-exchange-alt"></i> Differenza con Parole Simili:</h3>
+                <p><strong>Neighborhood</strong> → si riferisce all'area geografica</p>
+                <p><strong>Neighbor</strong> → si riferisce alla persona che vive vicino</p>
+            </div>
+            
+            <h3><i class="fas fa-link"></i> Parole Correlate:</h3>
+            <div class="related-words">
+                <div class="word-chip">Neighbor (vicino)</div>
+                <div class="word-chip">Community (comunità)</div>
+                <div class="word-chip">District (distretto)</div>
+                <div class="word-chip">Area (area)</div>
+                <div class="word-chip">Street (strada)</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="testo_originale.html" class="back-btn" style="margin-right: 15px;">
+                <i class="fas fa-file-alt"></i> Vedi il Testo Completo
+            </a>
+            <a href="catastrophe.html" class="back-btn" style="background: rgba(247, 37, 133, 0.1);">
+                <i class="fas fa-arrow-right"></i> Prossima Parola: Catastrophe
+            </a>
+        </div>
+        
+        <footer>
+            <p>Corso d'Inglese con le Canzoni - Approfondimento Parola: "Neighborhood"</p>
+            <p>Supertramp "Take the Long Way Home" - Utilizzo Didattico</p>
+        </footer>
+    </div>
+</body>
+</html>
