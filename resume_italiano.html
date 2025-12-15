@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corso Inglese - Introduzione per Principianti Assoluti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2a2d43 0%, #1c1e2e 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #f72585;
+        }
+        
+        h1 {
+            color: #f72585;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .language-level {
+            display: inline-block;
+            background: #4cc9f0;
+            color: #1a1a2e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(247, 37, 133, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(247, 37, 133, 0.2);
+        }
+        
+        .intro-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(247, 37, 133, 0.2);
+        }
+        
+        .section-title {
+            color: #4cc9f0;
+            border-bottom: 2px solid #f72585;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            font-size: 1.8rem;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .highlight-box {
+            background: rgba(247, 37, 133, 0.1);
+            border-left: 5px solid #f72585;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .metodo-list {
+            margin: 25px 0;
+        }
+        
+        .metodo-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(76, 201, 240, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .metodo-icon {
+            background: #4cc9f0;
+            color: #1a1a2e;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .word-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .word-table th {
+            background: #f72585;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .word-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .word-table tr:hover {
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        .english-word {
+            color: #4cc9f0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .suggerimenti {
+            background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(67, 97, 238, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px dashed #4cc9f0;
+        }
+        
+        .consigli-list {
+            margin: 20px 0;
+        }
+        
+        .consiglio {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        
+        .consiglio i {
+            color: #f72585;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline {
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .timeline-point {
+            background: #f72585;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 20px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid #4cc9f0;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            bottom: -25px;
+            width: 2px;
+            background: rgba(247, 37, 133, 0.5);
+            z-index: 1;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .nav-btn {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(247, 37, 133, 0.3);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(247, 37, 133, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .word-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> Corso di Inglese per Principianti Assoluti</h1>
+            <div class="language-level">LIVELLO: PRINCIPIANTE ASSOLUTO - INIZIA DA QUI!</div>
+            <p>Impara l'inglese con la musica - Metodo semplice e divertente</p>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna alla Pagina Principale
+            </a>
+        </header>
+        
+        <div class="intro-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> Benvenuto nel Tuo Percorso d'Inglese!</h2>
+            
+            <div class="intro-text">
+                <p><strong>Ciao!</strong> Benvenuto in questo corso di inglese. Questo corso è pensato per <strong>principianti assoluti</strong>. Non serve sapere già l'inglese per iniziare. Impariamo con la musica!</p>
+                
+                <p>La musica è un modo divertente per imparare. Le canzoni hanno parole semplici. Le canzoni hanno ripetizioni. Le canzoni sono facili da ricordare.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-lightbulb"></i> Come Funziona Questo Corso:</h3>
+                <p>1. Usiamo una canzone: <strong>"Take the Long Way Home"</strong> dei Supertramp</p>
+                <p>2. Impariamo <strong>parole semplici</strong> dalla canzone</p>
+                <p>3. Impariamo <strong>grammatica base</strong> dalla canzone</p>
+                <p>4. <strong>Ascoltiamo e ripetiamo</strong> - molto importante!</p>
+            </div>
+            
+            <div class="metodo-list">
+                <h2 class="section-title"><i class="fas fa-music"></i> Il Metodo "Musica per Imparare"</h2>
+                
+                <div class="metodo-item">
+                    <div class="metodo-icon">1</div>
+                    <div>
+                        <h3>Memoria Musicale</h3>
+                        <p>La musica crea "orecchini" (earworms) che aiutano a memorizzare parole e frasi senza sforzo.</p>
+                    </div>
+                </div>
+                
+                <div class="metodo-item">
+                    <div class="metodo-icon">2</div>
+                    <div>
+                        <h3>Inglese Reale</h3>
+                        <p>Impari l'inglese vero, usato nelle canzoni, non l'inglese artificiale dei libri di testo.</p>
+                    </div>
+                </div>
+                
+                <div class="metodo-item">
+                    <div class="metodo-icon">3</div>
+                    <div>
+                        <h3>Zero Stress</h3>
+                        <p>Nessun test, nessun voto. Impari al tuo ritmo, quando vuoi, divertendoti.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title"><i class="fas fa-book-open"></i> Prime Parole da Imparare</h2>
+            
+            <table class="word-table">
+                <thead>
+                    <tr>
+                        <th>Parola Inglese</th>
+                        <th>Pronuncia (circa)</th>
+                        <th>Significato Italiano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="english-word">HOME</td>
+                        <td>hohm (come "om" con h leggera)</td>
+                        <td>Casa</td>
+                    </tr>
+                    <tr>
+                        <td class="english-word">WAY</td>
+                        <td>uèi</td>
+                        <td>Strada, Via</td>
+                    </tr>
+                    <tr>
+                        <td class="english-word">YOU</td>
+                        <td>iu</td>
+                        <td>Tu</td>
+                    </tr>
+                    <tr>
+                        <td class="english-word">GOOD</td>
+                        <td>ghud</td>
+                        <td>Buono</td>
+                    </tr>
+                    <tr>
+                        <td class="english-word">TIME</td>
+                        <td>taim</td>
+                        <td>Tempo</td>
+                    </tr>
+                    <tr>
+                        <td class="english-word">LONG</td>
+                        <td>long</td>
+                        <td>Lungo</td>
+                    </tr>
+                    <tr>
+                        <td class="english-word">TAKE</td>
+                        <td>teik</td>
+                        <td>Prendere</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="suggerimenti">
+                <h3><i class="fas fa-star"></i> Consigli per Principianti Assoluti</h3>
+                
+                <div class="consigli-list">
+                    <div class="consiglio">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Non avere paura di sbagliare</strong>
+                            <p>Tutti fanno errori quando imparano una lingua. È normale!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="consiglio">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Poco ma spesso</strong>
+                            <p>Meglio 10 minuti al giorno che 2 ore una volta a settimana.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="consiglio">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Ripeti ad alta voce</strong>
+                            <p>La pronuncia migliora solo praticando. Parla anche da solo!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="consiglio">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Goditi il processo</strong>
+                            <p>Non è una gara. Goditi la musica e impara con piacere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <h2 class="section-title"><i class="fas fa-road"></i> Il Tuo Percorso di Apprendimento</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h3>Settimana 1: Ascolto Passivo</h3>
+                        <p>Ascolta la canzone mentre fai altre cose. Non cercare di capire tutto. Lascia che la musica ti entri in testa.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h3>Settimana 2: Parole Chiave</h3>
+                        <p>Impara 10 parole semplici dalla canzone. Usa la tabella qui sopra come punto di partenza.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h3>Settimana 3: Frasi Brevi</h3>
+                        <p>Impara frasi corte come "Take the long way home". Ripetile ad alta voce.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <h3>Settimana 4: Canta Insieme</h3>
+                        <p>Prova a cantare insieme alla canzone. Non importa se non sei intonato. L'importante è provare!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="resume_english.html" class="nav-btn">
+                <i class="fas fa-globe"></i>
+                <div>
+                    <strong>English Version</strong>
+                    <div>Read in simple English</div>
+                </div>
+            </a>
+            
+            <a href="testo_originale.html" class="nav-btn">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                    <strong>Testo Originale</strong>
+                    <div>Vedi il testo inglese completo</div>
+                </div>
+            </a>
+            
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="nav-btn">
+                <i class="fab fa-youtube"></i>
+                <div>
+                    <strong>Ascolta la Canzone</strong>
+                    <div>Guarda il video su YouTube</div>
+                </div>
+            </a>
+        </div>
+        
+        <footer>
+            <p>Corso di Inglese per Principianti Assoluti - Metodo di Apprendimento con la Musica</p>
+            <p>Supertramp "Take the Long Way Home" - Utilizzo Didattico</p>
+        </footer>
+    </div>
+</body>
+</html>
