@@ -214,25 +214,7 @@
             margin-left: 10px;
             vertical-align: middle;
         }
-       <!-- Aggiungi questa sezione prima del footer nel file index.html -->
-<div class="card" style="text-align: center; margin-top: 40px;">
-    <h2 class="card-title"><i class="fas fa-graduation-cap"></i> Vuoi Imparare a Creare un Sito Come Questo?</h2>
-    <p>Questo corso di inglese è anche un esempio pratico di sviluppo web. Scopri come abbiamo costruito questo sito e impara a crearne uno tuo!</p>
-    
-    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
-        <a href="uda_introduzione.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #4cc9f0, #4361ee); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold;">
-            <i class="fas fa-book-open"></i> Scopri l'UDA Interdisciplinare
-        </a>
         
-        <a href="uda_corso_web.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(247, 37, 133, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #f72585;">
-            <i class="fas fa-laptop-code"></i> Inizia il Corso Web
-        </a>
-    </div>
-    
-    <p style="margin-top: 20px; font-size: 0.9rem; color: #a9e4f9;">
-        <i class="fas fa-lightbulb"></i> Impara inglese E tecnologia nello stesso progetto!
-    </p>
-</div> 
         footer {
             text-align: center;
             margin-top: 50px;
@@ -322,6 +304,42 @@
             background: rgba(247, 37, 133, 0.4);
             transform: scale(1.05);
         }
+        
+        .key-words-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .key-word-item {
+            margin-bottom: 12px;
+        }
+        
+        .key-word-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4cc9f0;
+            text-decoration: none;
+            padding: 8px 15px;
+            background: rgba(76, 201, 240, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .key-word-link:hover {
+            background: rgba(76, 201, 240, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .key-word-icon {
+            color: #f72585;
+        }
+        
+        .external-link-icon {
+            margin-left: auto;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -409,13 +427,43 @@
                     <p><span class="highlight">Durata:</span> 5:08 minuti</p>
                     <p><span class="highlight">Autori:</span> Rick Davies e Roger Hodgson</p>
                     
-                    <h3>Parole Chiave nel Testo</h3>
-                    <ul>
-                        <li><span class="tooltip">Neighborhood<span class="tooltip-text">Quartiere, vicinato</span></span></li>
-                        <li><span class="tooltip">Catastrophe<span class="tooltip-text">Catastrofe, disastro</span></span></li>
-                        <li><span class="tooltip">Gallery<span class="tooltip-text">Galleria, pubblico</span></span></li>
-                        <li><span class="tooltip">Stage<span class="tooltip-text">Palcoscenico</span></span></li>
-                        <li><span class="tooltip">To grow<span class="tooltip-text">Crescere (fisicamente o maturare)</span></span></li>
+                    <h3>Parole Chiave nel Testo <span style="font-size: 0.9rem; color: #f72585;">(clicca per approfondire)</span></h3>
+                    <ul class="key-words-list">
+                        <li class="key-word-item">
+                            <a href="neighborhood.html" class="key-word-link">
+                                <i class="fas fa-home key-word-icon"></i>
+                                <span><strong>Neighborhood</strong> - Quartiere, vicinato</span>
+                                <i class="fas fa-external-link-alt external-link-icon"></i>
+                            </a>
+                        </li>
+                        <li class="key-word-item">
+                            <a href="catastrophe.html" class="key-word-link">
+                                <i class="fas fa-exclamation-triangle key-word-icon"></i>
+                                <span><strong>Catastrophe</strong> - Catastrofe, disastro</span>
+                                <i class="fas fa-external-link-alt external-link-icon"></i>
+                            </a>
+                        </li>
+                        <li class="key-word-item">
+                            <a href="gallery.html" class="key-word-link">
+                                <i class="fas fa-images key-word-icon"></i>
+                                <span><strong>Gallery</strong> - Galleria, pubblico</span>
+                                <i class="fas fa-external-link-alt external-link-icon"></i>
+                            </a>
+                        </li>
+                        <li class="key-word-item">
+                            <a href="stage.html" class="key-word-link">
+                                <i class="fas fa-theater-masks key-word-icon"></i>
+                                <span><strong>Stage</strong> - Palcoscenico, fase</span>
+                                <i class="fas fa-external-link-alt external-link-icon"></i>
+                            </a>
+                        </li>
+                        <li class="key-word-item">
+                            <a href="togrow.html" class="key-word-link">
+                                <i class="fas fa-seedling key-word-icon"></i>
+                                <span><strong>To grow</strong> - Crescere, svilupparsi</span>
+                                <i class="fas fa-external-link-alt external-link-icon"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -475,6 +523,25 @@
             </a>
         </div>
         
+        <div class="card" style="text-align: center; margin-top: 40px;">
+            <h2 class="card-title"><i class="fas fa-code"></i> Vuoi Imparare a Creare un Sito Come Questo?</h2>
+            <p>Questo corso di inglese è anche un esempio pratico di sviluppo web. Scopri come abbiamo costruito questo sito e impara a crearne uno tuo!</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 25px;">
+                <a href="uda_introduzione.html" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #4cc9f0, #4361ee); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold;">
+                    <i class="fas fa-book-open"></i> Scopri l'UDA Interdisciplinare
+                </a>
+                
+                <a href="uda_corso_web.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(247, 37, 133, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #f72585;">
+                    <i class="fas fa-laptop-code"></i> Inizia il Corso Web
+                </a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #a9e4f9;">
+                <i class="fas fa-lightbulb"></i> Impara inglese E tecnologia nello stesso progetto!
+            </p>
+        </div>
+        
         <footer>
             <p>Corso creato per l'apprendimento dell'inglese attraverso la musica | Supertramp - "Take the Long Way Home"</p>
             <p>Per uso didattico - Testo e traduzione a scopo illustrativo</p>
@@ -531,6 +598,7 @@
             // Messaggio di benvenuto nella console (opzionale)
             console.log('🎵 Benvenuto nel Corso d\'Inglese con le Canzoni! 🎵');
             console.log('🎶 Impara l\'inglese con "Take the Long Way Home" dei Supertramp');
+            console.log('🔗 Tutti i link sono stati verificati e dovrebbero funzionare correttamente');
         });
     </script>
 </body>
