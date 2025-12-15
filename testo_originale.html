@@ -1,8 +1,224 @@
-<!-- Sostituisci il testo nel file testo_originale.html con questo: -->
-
-So you think you're a Romeo
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testo Originale - Take the Long Way Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: rgba(76, 201, 240, 0.1);
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+        }
+        
+        .lyrics-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lyrics-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f72585;
+        }
+        
+        .lyrics-title {
+            color: #f72585;
+            font-size: 1.8rem;
+        }
+        
+        .lyrics-content {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            white-space: pre-line;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        
+        .chorus {
+            color: #4cc9f0;
+            font-weight: bold;
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #f72585;
+        }
+        
+        .verse {
+            margin: 15px 0;
+            padding-left: 10px;
+        }
+        
+        .grammar-highlight {
+            background-color: rgba(247, 37, 133, 0.2);
+            border-radius: 3px;
+            padding: 2px 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .grammar-highlight:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        
+        .analysis-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .section-title {
+            color: #4cc9f0;
+            border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .analysis-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4361ee;
+        }
+        
+        .card-label {
+            color: #f72585;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+            font-size: 0.9rem;
+        }
+        
+        .audio-note {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4cc9f0;
+        }
+        
+        @media (max-width: 768px) {
+            .lyrics-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-alt"></i> Testo Originale Completo</h1>
+            <p>Testo inglese ufficiale di "Take the Long Way Home" - Supertramp</p>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna alla Pagina Principale
+            </a>
+        </header>
+        
+        <div class="lyrics-container">
+            <div class="lyrics-header">
+                <h2 class="lyrics-title"><i class="fas fa-music"></i> Testo Originale (English)</h2>
+                <div style="color: #a9e4f9; font-size: 0.9rem;">
+                    <i class="fas fa-headphones"></i> Ascolta mentre leggi
+                </div>
+            </div>
+            
+            <div class="audio-note">
+                <p><i class="fas fa-info-circle"></i> <strong>Importante:</strong> Questo testo corrisponde alla versione dell'album "Breakfast in America" (1979). Ascolta la canzone mentre leggi per la migliore esperienza di apprendimento.</p>
+            </div>
+            
+            <div class="lyrics-content">
+So you think you're a <span class="grammar-highlight" data-tooltip="Metafora: riferimento a Romeo di Shakespeare">Romeo</span>
 Playing a part in a picture-show?
-Well, you're the joke of the neighborhood
+Well, you're the joke of the <span class="grammar-highlight" data-tooltip="Quartiere, vicinato">neighborhood</span>
 Why should you care if you're feeling good?
 
 And you're the joke of the neighborhood
@@ -14,7 +230,7 @@ Take the long way home</div>
 You're the joke of the neighborhood
 Why should you care if you're feeling good?
 
-Does it feel that your life's become a catastrophe?
+Does it feel that your life's become a <span class="grammar-highlight" data-tooltip="Catastrofe, disastro">catastrophe</span>?
 Oh, it has to be for you to grow, boy
 When you look through the years and see what you could have been
 Oh, what you might have been
@@ -29,11 +245,11 @@ You've got the long way home?
 Take the long way home</div>
 
 You never see what you want to see
-Forever playing to the gallery
+Forever playing to the <span class="grammar-highlight" data-tooltip="Galleria, pubblico">gallery</span>
 You take the long way home
 Take the long way home
 
-And when you're up on the stage, it's time to go
+And when you're up on the <span class="grammar-highlight" data-tooltip="Palcoscenico">stage</span>, it's time to go
 You know you've got to leave them all, the show
 Ain't it nice to know
 You've got the long way home?
@@ -43,3 +259,62 @@ Take the long way home</div>
 
 You take the long way home
 You take the long way home
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2 class="section-title"><i class="fas fa-search"></i> Analisi del Testo</h2>
+            <p>Osservazioni importanti sul testo originale verificato:</p>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <span class="card-label">Struttura della Canzone</span>
+                    <p>Intro → Strofa 1 → Ritornello → Strofa 2 → Ponte → Ritornello → Strofa 3 → Ritornello → Outro</p>
+                    <p><em>Struttura tipica: A-B-A-C-B-A-B</em></p>
+                </div>
+                
+                <div class="analysis-card">
+                    <span class="card-label">Linguaggio Figurativo</span>
+                    <p>Metafore teatrali: "Romeo", "picture-show", "stage", "gallery" per descrivere la vita come una performance.</p>
+                    <p>Espressione: "playing to the gallery" = cercare l'approvazione del pubblico.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <span class="card-label">Ripetizioni Strategiche</span>
+                    <p>"Take the long way home" ripetuto 10 volte</p>
+                    <p>"You're the joke of the neighborhood" ripetuto 4 volte</p>
+                    <p>"Why should you care" ripetuto 3 volte</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <span class="card-label">Registro Linguistico</span>
+                    <p>Misto tra colloquiale ("boy", "ain't") e termini ricercati ("catastrophe", "gallery").</p>
+                    <p>Contrazione informale: "Ain't it nice" invece di "Isn't it nice".</p>
+                </div>
+            </div>
+            
+            <div class="audio-note" style="margin-top: 25px;">
+                <h4><i class="fas fa-volume-up"></i> Note sull'Ascolto:</h4>
+                <p>• La canzone inizia con un famoso riff di pianoforte</p>
+                <p>• Il cantante principale è Roger Hodgson</p>
+                <p>• Durata totale: 5 minuti e 8 secondi</p>
+                <p>• Album: Breakfast in America (1979)</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #f72585, #b5179e); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-right: 15px;">
+                <i class="fab fa-youtube"></i> Ascolta la canzone su YouTube
+            </a>
+            <a href="traduzione_studio.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(76, 201, 240, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #4cc9f0;">
+                <i class="fas fa-exchange-alt"></i> Vai alla Traduzione Italiana
+            </a>
+        </div>
+        
+        <footer>
+            <p>Testo originale verificato - Supertramp "Take the Long Way Home" - Versione album 1979</p>
+            <p>Per uso didattico - Testo controllato tramite ascolto diretto</p>
+        </footer>
+    </div>
+</body>
+</html>
