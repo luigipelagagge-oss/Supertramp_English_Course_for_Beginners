@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corso d'Inglese con le Canzoni: Take the Long Way Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #4cc9f0;
+            box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+        }
+        
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            color: #a9e4f9;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .song-title {
+            color: #f72585;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-title {
+            color: #4cc9f0;
+            border-bottom: 2px solid #f72585;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title i {
+            color: #f72585;
+        }
+        
+        h3 {
+            color: #a9e4f9;
+            margin: 20px 0 10px;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .example {
+            background: rgba(76, 201, 240, 0.1);
+            border-left: 4px solid #4cc9f0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight {
+            color: #f72585;
+            font-weight: bold;
+        }
+        
+        .video-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(to right, #f72585, #b5179e);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+        }
+        
+        .video-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.6);
+        }
+        
+        .video-btn i {
+            font-size: 1.5rem;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .nav-btn {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(76, 201, 240, 0.1);
+            border-color: #4cc9f0;
+        }
+        
+        .nav-btn i {
+            font-size: 1.5rem;
+            color: #4cc9f0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+            font-size: 0.9rem;
+        }
+        
+        .grammar-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #4361ee;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .tooltip {
+            position: relative;
+            cursor: pointer;
+            border-bottom: 1px dashed #4cc9f0;
+        }
+        
+        .tooltip-text {
+            visibility: hidden;
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-music"></i> Corso d'Inglese con le Canzoni</h1>
+            <p class="subtitle">Impara la grammatica inglese attraverso l'analisi del testo di <span class="song-title">"Take the Long Way Home"</span> dei Supertramp</p>
+        </header>
+        
+        <div class="main-content">
+            <div>
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-language"></i> Basi della Grammatica nella Canzone</h2>
+                    
+                    <h3><span class="grammar-icon">1</span> Domande Retoriche (Rhetorical Questions)</h3>
+                    <p>Le domande retoriche non cercano una risposta, ma esprimono un'idea o una sfida.</p>
+                    <div class="example">
+                        <p><span class="highlight">Testo originale:</span> "So you think you're a Romeo?"</p>
+                        <p><span class="highlight">Struttura:</span> Soggetto + verbo + complemento + <span class="tooltip">punto interrogativo<span class="tooltip-text">In inglese si chiama "question mark"</span></span></p>
+                        <p><span class="highlight">Traduzione:</span> "Quindi pensi di essere un Romeo?"</p>
+                    </div>
+                    
+                    <h3><span class="grammar-icon">2</span> Il Verbo Modale "Should"</h3>
+                    <p>"Should" esprime un consiglio, un dovere morale o (come in questo caso) un punto di vista logico.</p>
+                    <div class="example">
+                        <p><span class="highlight">Testo originale:</span> "Why should you care if you're feeling good?"</p>
+                        <p><span class="highlight">Struttura:</span> Why + should + soggetto + verbo base + ...?</p>
+                        <p><span class="highlight">Significato:</span> "Perché mai dovrebbe importarti se ti senti bene?"</p>
+                    </div>
+                    
+                    <h3><span class="grammar-icon">3</span> Costruzione "For + qualcuno + To + verbo"</h3>
+                    <p>Esprime lo scopo o il beneficio di un'azione per una persona.</p>
+                    <div class="example">
+                        <p><span class="highlight">Testo originale:</span> "It has to be for you to grow, boy"</p>
+                        <p><span class="highlight">Struttura:</span> ...for + [persona] + to + [verbo base]</p>
+                        <p><span class="highlight">Significato:</span> "...affinché tu cresca, ragazzo"</p>
+                    </div>
+                    
+                    <h3><span class="grammar-icon">4</span> Periodo Ipotetico (Tipo 3)</h3>
+                    <p>Si usa per situazioni passate che non si sono verificate (rimpianti, possibilità perdute).</p>
+                    <div class="example">
+                        <p><span class="highlight">Testo originale:</span> "If you'd had more time" (If you had had)</p>
+                        <p><span class="highlight">Struttura:</span> If + Past Perfect, + would/could/might + have + participio passato</p>
+                        <p><span class="highlight">Significato:</span> "Se tu avessi avuto più tempo" (ma non l'hai avuto)</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-lightbulb"></i> Come Studiare con Questo Corso</h2>
+                    <ol>
+                        <li><span class="highlight">Ascolta la canzone</span> più volte per familiarizzare con suoni e ritmo</li>
+                        <li><span class="highlight">Leggi il testo originale</span> cercando di capire il significato generale</li>
+                        <li><span class="highlight">Analizza le strutture grammaticali</span> evidenziate nelle schede</li>
+                        <li><span class="highlight">Confronta con la traduzione</span> per comprendere le differenze linguistiche</li>
+                        <li><span class="highlight">Ripeti ad alta voce</span> le frasi per migliorare pronuncia e memorizzazione</li>
+                        <li><span class="highlight">Fai gli esercizi</span> proposti per consolidare l'apprendimento</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-info-circle"></i> Informazioni Canzone</h2>
+                    <p><span class="highlight">Artista:</span> Supertramp</p>
+                    <p><span class="highlight">Album:</span> Breakfast in America (1979)</p>
+                    <p><span class="highlight">Genere:</span> Progressive Rock / Pop Rock</p>
+                    <p><span class="highlight">Durata:</span> 5:08 minuti</p>
+                    <p><span class="highlight">Autori:</span> Rick Davies e Roger Hodgson</p>
+                    
+                    <h3>Parole Chiave nel Testo</h3>
+                    <ul>
+                        <li><span class="tooltip">Neighborhood<span class="tooltip-text">Quartiere, vicinato</span></span></li>
+                        <li><span class="tooltip">Catastrophe<span class="tooltip-text">Catastrofe, disastro</span></span></li>
+                        <li><span class="tooltip">Gallery<span class="tooltip-text">Galleria, pubblico</span></span></li>
+                        <li><span class="tooltip">Stage<span class="tooltip-text">Palcoscenico</span></span></li>
+                        <li><span class="tooltip">To grow<span class="tooltip-text">Crescere (fisicamente o maturare)</span></span></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-star"></i> Perché Funziona</h2>
+                    <p>Studiare con le canzoni è efficace perché:</p>
+                    <ul>
+                        <li><span class="highlight">La musica aiuta la memoria</span> (effetto "earworm")</li>
+                        <li><span class="highlight">Il contesto emotivo</span> facilita l'apprendimento</li>
+                        <li><span class="highlight">Il linguaggio è autentico</span>, non artificiale come nei libri</li>
+                        <li><span class="highlight">Si imparano espressioni colloquiali</span> usate realmente</li>
+                        <li><span class="highlight">La ripetizione del ritornello</span> rinforza le strutture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-section">
+            <h2>Guarda il Video Ufficiale</h2>
+            <p>Ascolta la canzone originale mentre segui il testo per un'esperienza completa di apprendimento.</p>
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="video-btn">
+                <i class="fab fa-youtube"></i> Guarda "Take the Long Way Home" su YouTube
+            </a>
+        </div>
+        
+        <div class="navigation">
+            <a href="testo_originale.html" class="nav-btn">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                    <strong>Testo Originale</strong>
+                    <div>Analisi completa del testo in inglese</div>
+                </div>
+            </a>
+            
+            <a href="traduzione_studio.html" class="nav-btn">
+                <i class="fas fa-exchange-alt"></i>
+                <div>
+                    <strong>Traduzione & Studio</strong>
+                    <div>Traduzione italiana e percorso di apprendimento</div>
+                </div>
+            </a>
+        </div>
+        
+        <footer>
+            <p>Corso creato per l'apprendimento dell'inglese attraverso la musica | Supertramp - "Take the Long Way Home"</p>
+            <p>Per uso didattico - Testo e traduzione a scopo illustrativo</p>
+        </footer>
+    </div>
+</body>
+</html>
