@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valutazione UDA - English & Tech Fusion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f72585;
+        }
+        
+        h1 {
+            color: #f72585;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .assessment-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #4cc9f0, #4361ee);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(247, 37, 133, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(247, 37, 133, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .assessment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #4cc9f0;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: #f72585;
+        }
+        
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .rubric-table th {
+            background: #4cc9f0;
+            color: #1a1a2e;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .rubric-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
+        }
+        
+        .rubric-table tr:hover {
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        .competence-level {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 2px;
+        }
+        
+        .basic { background: #6c757d; color: white; }
+        .intermediate { background: #17a2b8; color: white; }
+        .advanced { background: #28a745; color: white; }
+        .excellent { background: #f72585; color: white; }
+        
+        .criteria-list {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        .criteria-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .criteria-list li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: #4cc9f0;
+            font-size: 1.5rem;
+        }
+        
+        .final-project {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            border-left: 5px solid #f72585;
+        }
+        
+        .project-steps {
+            counter-reset: project-step;
+            margin: 30px 0;
+        }
+        
+        .project-step {
+            margin-bottom: 25px;
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .project-step::before {
+            counter-increment: project-step;
+            content: counter(project-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #4cc9f0;
+            color: #1a1a2e;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .evaluation-form {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4cc9f0;
+            font-weight: bold;
+        }
+        
+        .form-checkbox {
+            margin-right: 10px;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #4cc9f0;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #f72585, #b5179e);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 30px auto 0;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: #28a745;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        @media (max-width: 768px) {
+            .assessment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rubric-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clipboard-check"></i> Valutazione UDA</h1>
+            <div class="assessment-badge">RUBRICA DI VALUTAZIONE E VERIFICA</div>
+            <p>Strumenti per valutare le competenze acquisite nell'UDA English & Tech Fusion</p>
+            <a href="uda_introduzione.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna all'UDA
+            </a>
+        </header>
+        
+        <div class="assessment-grid">
+            <div class="assessment-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #4cc9f0;">Valutazione Inglese</h3>
+                        <p>Competenze linguistiche acquisite</p>
+                    </div>
+                </div>
+                
+                <table class="rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Competenza</th>
+                            <th>Livello</th>
+                            <th>Indicatori</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Comprensione Testi</td>
+                            <td>
+                                <span class="competence-level basic">Base</span>
+                                <span class="competence-level intermediate">Intermedio</span>
+                                <span class="competence-level advanced">Avanzato</span>
+                            </td>
+                            <td>Capire il testo della canzone e rispondere a domande</td>
+                        </tr>
+                        <tr>
+                            <td>Vocabolario</td>
+                            <td>
+                                <span class="competence-level basic">Base</span>
+                                <span class="competence-level intermediate">Intermedio</span>
+                            </td>
+                            <td>Usare 20+ parole inglesi in contesto</td>
+                        </tr>
+                        <tr>
+                            <td>Grammatica</td>
+                            <td>
+                                <span class="competence-level basic">Base</span>
+                                <span class="competence-level intermediate">Intermedio</span>
+                            </td>
+                            <td>Riconoscere strutture grammaticali nel testo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="assessment-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #4cc9f0;">Valutazione Tecnologica</h3>
+                        <p>Competenze digitali sviluppate</p>
+                    </div>
+                </div>
+                
+                <table class="rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Competenza</th>
+                            <th>Livello</th>
+                            <th>Indicatori</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>
+                                <span class="competence-level basic">Base</span>
+                                <span class="competence-level intermediate">Intermedio</span>
+                            </td>
+                            <td>Creare pagine web con struttura corretta</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>
+                                <span class="competence-level basic">Base</span>
+                            </td>
+                            <td>Applicare stili base alle pagine</td>
+                        </tr>
+                        <tr>
+                            <td>GitHub</td>
+                            <td>
+                                <span class="competence-level basic">Base</span>
+                            </td>
+                            <td>Pubblicare un sito web online</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="final-project">
+            <h2 style="color: #f72585; margin-bottom: 25px; text-align: center;">
+                <i class="fas fa-project-diagram"></i> Progetto Finale di Valutazione
+            </h2>
+            
+            <p>Gli studenti devono creare il proprio corso di inglese online su una canzone a scelta, dimostrando le competenze acquisite.</p>
+            
+            <div class="project-steps">
+                <div class="project-step">
+                    <h4>1. Scelta della Canzone</h4>
+                    <p>Scegliere una canzone in inglese (adatta all'età) e analizzarne il testo.</p>
+                </div>
+                
+                <div class="project-step">
+                    <h4>2. Creazione Contenuti</h4>
+                    <p>Preparare: testo originale, traduzione, analisi grammaticale, vocabolario.</p>
+                </div>
+                
+                <div class="project-step">
+                    <h4>3. Sviluppo Web</h4>
+                    <p>Creare almeno 3 pagine HTML con stili CSS personalizzati.</p>
+                </div>
+                
+                <div class="project-step">
+                    <h4>4. Pubblicazione</h4>
+                    <p>Caricare il progetto su GitHub e pubblicarlo con GitHub Pages.</p>
+                </div>
+                
+                <div class="project-step">
+                    <h4>5. Presentazione</h4>
+                    <p>Presentare il progetto alla classe, spiegando le scelte fatte.</p>
+                </div>
+            </div>
+            
+            <h3 style="color: #4cc9f0; margin-top: 30px;">Criteri di Valutazione del Progetto:</h3>
+            <ul class="criteria-list">
+                <li>Correttezza linguistica dei contenuti inglesi</li>
+                <li>Qualità della traduzione e dell'analisi grammaticale</li>
+                <li>Funzionalità tecnica del sito web (link funzionanti, etc.)</li>
+                <li>Design e usabilità dell'interfaccia</li>
+                <li>Creatività e originalità del progetto</li>
+                <li>Qualità della presentazione orale</li>
+            </ul>
+        </div>
+        
+        <div class="evaluation-form">
+            <h2 style="color: #4cc9f0; margin-bottom: 30px; text-align: center;">
+                <i class="fas fa-edit"></i> Autovalutazione Studente
+            </h2>
+            
+            <div class="form-group">
+                <label class="form-label">1. Quanto ti senti migliorato/a nella comprensione dell'inglese?</label>
+                <div>
+                    <input type="radio" id="eng1" name="english" class="form-checkbox">
+                    <label for="eng1">Molto poco</label>
+                </div>
+                <div>
+                    <input type="radio" id="eng2" name="english" class="form-checkbox">
+                    <label for="eng2">Abbastanza</label>
+                </div>
+                <div>
+                    <input type="radio" id="eng3" name="english" class="form-checkbox">
+                    <label for="eng3">Molto</label>
+                </div>
+                <div>
+                    <input type="radio" id="eng4" name="english" class="form-checkbox">
+                    <label for="eng4">Eccellentemente</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">2. Quali competenze digitali hai acquisito?</label>
+                <div>
+                    <input type="checkbox" id="skill1" class="form-checkbox">
+                    <label for="skill1">HTML base</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="skill2" class="form-checkbox">
+                    <label for="skill2">CSS base</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="skill3" class="form-checkbox">
+                    <label for="skill3">Uso di GitHub</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="skill4" class="form-checkbox">
+                    <label for="skill4">Pubblicazione web</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">3. Cosa ti è piaciuto di più di questo progetto interdisciplinare?</label>
+                <textarea class="form-textarea" placeholder="Scrivi qui la tua risposta..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">4. Cosa miglioreresti in questo UDA?</label>
+                <textarea class="form-textarea" placeholder="Scrivi qui i tuoi suggerimenti..."></textarea>
+            </div>
+            
+            <button class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Invia Autovalutazione
+            </button>
+        </div>
+        
+        <div class="download-section">
+            <h3 style="color: #f72585; margin-bottom: 25px;">
+                <i class="fas fa-download"></i> Materiali per Insegnanti
+            </h3>
+            <p>Scarica la rubrica di valutazione completa e le schede per gli studenti:</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="#" class="download-btn">
+                    <i class="fas fa-file-pdf"></i>
+                    <div>
+                        <div>Rubrica di Valutazione</div>
+                        <div style="font-size: 0.9rem;">PDF - 150KB</div>
+                    </div>
+                </a>
+                
+                <a href="#" class="download-btn" style="background: #4361ee;">
+                    <i class="fas fa-file-word"></i>
+                    <div>
+                        <div>Schede Studenti</div>
+                        <div style="font-size: 0.9rem;">DOCX - 200KB</div>
+                    </div>
+                </a>
+                
+                <a href="#" class="download-btn" style="background: #f72585;">
+                    <i class="fas fa-file-powerpoint"></i>
+                    <div>
+                        <div>Presentazione UDA</div>
+                        <div style="font-size: 0.9rem;">PPTX - 2.5MB</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>UDA English & Tech Fusion - Strumenti di Valutazione e Verifica</p>
+            <p>Per uso didattico - Adattabile a diversi livelli scolastici</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function() {
+                    alert('Autovalutazione inviata con successo! Grazie per il tuo feedback. 🎓');
+                    
+                    // Reset form
+                    const checkboxes = document.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+                    const textareas = document.querySelectorAll('textarea');
+                    
+                    checkboxes.forEach(cb => cb.checked = false);
+                    textareas.forEach(ta => ta.value = '');
+                });
+            }
+            
+            // Simulazione download (in un progetto reale qui ci sarebbero link reali)
+            const downloadBtns = document.querySelectorAll('.download-btn');
+            downloadBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('In un progetto reale, questo pulsante scaricherebbe il file. 📄\n\nPer ora, visualizza i contenuti nelle pagine dell\'UDA!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
