@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Impara l'Inglese con le Canzoni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e2d3e 0%, #2a3c52 100%);
+            color: #f1f1f1;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4361ee;
+        }
+        
+        h1 {
+            color: #4361ee;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .word-display {
+            font-size: 4rem;
+            color: #4cc9f0;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .pronunciation {
+            color: #a9e4f9;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a9e4f9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background: rgba(67, 97, 238, 0.1);
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(67, 97, 238, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(67, 97, 238, 0.2);
+        }
+        
+        .section-title {
+            color: #4cc9f0;
+            border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .meaning-box {
+            background: rgba(67, 97, 238, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4361ee;
+        }
+        
+        .example-box {
+            background: rgba(76, 201, 240, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4cc9f0;
+        }
+        
+        .example-sentence {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid #f72585;
+        }
+        
+        .english {
+            color: #4361ee;
+            font-weight: bold;
+        }
+        
+        .italian {
+            color: #a9e4f9;
+            font-style: italic;
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        
+        .song-example {
+            background: rgba(247, 37, 133, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid #f72585;
+        }
+        
+        .tip-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px dashed #4361ee;
+        }
+        
+        .related-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .word-chip {
+            background: rgba(76, 201, 240, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #4cc9f0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a9e4f9;
+        }
+        
+        .practice-box {
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .meaning-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .meaning-type {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .meaning-type h4 {
+            color: #f72585;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .word-display {
+                font-size: 3rem;
+            }
+            
+            .meaning-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-images"></i> Parola Chiave: Gallery</h1>
+            <div class="word-display">GALLERY</div>
+            <div class="pronunciation"><i class="fas fa-volume-up"></i> Pronuncia: <strong>/ˈɡæləri/</strong> (GAL-uh-ree)</div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Torna alla Pagina Principale
+            </a>
+        </header>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-book"></i> Significato e Traduzione</h2>
+            
+            <div class="meaning-box">
+                <h3><i class="fas fa-language"></i> Traduzione Italiana:</h3>
+                <p style="font-size: 1.3rem; color: #4361ee; margin: 10px 0;"><strong>GALLERIA • PUBBLICO • PLATEA</strong></p>
+                <p>Nella canzone ha un significato metaforico: "giocare per il pubblico" significa cercare l'approvazione degli altri invece di essere autentici.</p>
+            </div>
+            
+            <div class="song-example">
+                <h3><i class="fas fa-music"></i> Nella nostra canzone:</h3>
+                <p>Nel testo di "Take the Long Way Home", la parola appare nel verso:</p>
+                <p style="font-size: 1.2rem; color: #4cc9f0; margin: 15px 0; font-style: italic;">
+                    "Forever playing to the gallery"
+                </p>
+                <p>Che significa: <strong>"Sempre a recitare per il pubblico"</strong> (cercare sempre l'approvazione degli altri)</p>
+            </div>
+            
+            <div class="meaning-types">
+                <div class="meaning-type">
+                    <h4><i class="fas fa-paint-brush"></i> Arte</h4>
+                    <p>Galleria d'arte: sala espositiva per quadri e sculture</p>
+                    <p><em>We visited an art gallery.</em></p>
+                </div>
+                
+                <div class="meaning-type">
+                    <h4><i class="fas fa-theater-masks"></i> Teatro</h4>
+                    <p>Platea: la parte più economica di un teatro</p>
+                    <p><em>We sat in the gallery.</em></p>
+                </div>
+                
+                <div class="meaning-type">
+                    <h4><i class="fas fa-users"></i> Metaforico</h4>
+                    <p>Pubblico: cercare l'attenzione o l'approvazione</p>
+                    <p><em>He's always playing to the gallery.</em></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-comment-alt"></i> Frasi di Esempio per Imparare</h2>
+            
+            <div class="example-box">
+                <h3><i class="fas fa-star"></i> 4 Frasi Semplici per Praticare:</h3>
+                
+                <div class="example-sentence">
+                    <div class="english">1. The museum has a beautiful art gallery.</div>
+                    <div class="italian">Il museo ha una bellissima galleria d'arte.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">2. Politicians often play to the gallery.</div>
+                    <div class="italian">I politici spesso recitano per il pubblico.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">3. We bought cheap seats in the gallery.</div>
+                    <div class="italian">Abbiamo comprato posti economici in platea.</div>
+                </div>
+                
+                <div class="example-sentence">
+                    <div class="english">4. The photo gallery shows her best work.</div>
+                    <div class="italian">La galleria fotografica mostra i suoi lavori migliori.</div>
+                </div>
+            </div>
+            
+            <div class="practice-box">
+                <h3><i class="fas fa-pencil-alt"></i> Esercizio Pratico:</h3>
+                <p>In quale di queste frasi "gallery" significa "pubblico" (in senso metaforico)?</p>
+                <p style="margin: 10px 0;">1. The National Gallery has famous paintings.</p>
+                <p style="margin: 10px 0;">2. The comedian played to the gallery with his jokes.</p>
+                <p style="margin: 10px 0;">3. We walked through the picture gallery.</p>
+                <p><em>Risposta: 2. "Play to the gallery" è un'espressione idiomatica.</em></p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Espressioni Idiomatiche</h2>
+            
+            <div class="tip-box">
+                <h3><i class="fas fa-comments"></i> "Play to the gallery"</h3>
+                <p>Espressione idiomatica che significa:</p>
+                <p><strong>Cercare di piacere al pubblico comune, spesso in modo eccessivo o poco sofisticato.</strong></p>
+                <p>Esempio: "Instead of explaining the complex issue, he played to the gallery with simple slogans."</p>
+            </div>
+            
+            <div class="tip-box">
+                <h3><i class="fas fa-brain"></i> Trucco per la Memoria:</h3>
+                <p>Pensa a "GALLERY" come "GALL-ery".</p>
+                <p>Immagina una GALLina (gallina) in una galleria d'arte - sarebbe ridicolo, come "giocare per il pubblico"!</p>
+            </div>
+            
+            <h3><i class="fas fa-link"></i> Parole Correlate:</h3>
+            <div class="related-words">
+                <div class="word-chip">Audience (pubblico)</div>
+                <div class="word-chip">Exhibition (mostra)</div>
+                <div class="word-chip">Museum (museo)</div>
+                <div class="word-chip">Spectators (spettatori)</div>
+                <div class="word-chip">Display (esposizione)</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="catastrophe.html" class="back-btn" style="margin-right: 15px; background: rgba(247, 37, 133, 0.1);">
+                <i class="fas fa-arrow-left"></i> Parola Precedente: Catastrophe
+            </a>
+            <a href="stage.html" class="back-btn" style="background: rgba(76, 201, 240, 0.1);">
+                <i class="fas fa-arrow-right"></i> Prossima Parola: Stage
+            </a>
+        </div>
+        
+        <footer>
+            <p>Corso d'Inglese con le Canzoni - Approfondimento Parola: "Gallery"</p>
+            <p>Supertramp "Take the Long Way Home" - Utilizzo Didattico</p>
+        </footer>
+    </div>
+</body>
+</html>
