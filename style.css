@@ -1,385 +1,188 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Stili Aggiunti per testo_originale.html e altre pagine secondarie */
+
+/* Background specifico per le pagine secondarie, se necessario (oppure commenta per mantenere il gradiente dell'index) */
+.lyrics-page-body {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
 }
- 
-body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #f1f1f1;
-    line-height: 1.6;
-    min-height: 100vh;
-}
- 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
- 
-header {
-    text-align: center;
-    padding: 40px 0;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    margin-bottom: 30px;
-    border: 1px solid #4cc9f0;
-    box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
-}
- 
-h1 {
-    color: #4cc9f0;
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
- 
-.subtitle {
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: #a9e4f9;
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: rgba(76, 201, 240, 0.1);
+    margin-top: 15px;
+    transition: all 0.3s;
 }
- 
-.song-title {
-    color: #f72585;
-    font-weight: bold;
-    font-style: italic;
+
+.back-btn:hover {
+    background: rgba(76, 201, 240, 0.2);
 }
- 
-.main-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
-}
- 
-@media (max-width: 900px) {
-    .main-content {
-        grid-template-columns: 1fr;
-    }
-}
- 
-.card {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
+
+.lyrics-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
     border: 1px solid rgba(76, 201, 240, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
- 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
- 
-.card-title {
-    color: #4cc9f0;
+
+.lyrics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
     border-bottom: 2px solid #f72585;
+}
+
+.lyrics-title {
+    color: #f72585;
+    font-size: 1.8rem;
+}
+
+.lyrics-info { /* Nuovo stile per l'informazione sulla durata */
+    color: #a9e4f9; 
+    font-size: 0.9rem;
+}
+
+.lyrics-content {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.chorus {
+    color: #4cc9f0;
+    font-weight: bold;
+    margin: 20px 0;
+    padding-left: 20px;
+    border-left: 3px solid #f72585;
+}
+
+.vocabulary-box {
+    background: rgba(42, 157, 143, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border-left: 4px solid #2a9d8f;
+}
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.vocab-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.english-word {
+    color: #4cc9f0;
+    font-weight: bold;
+    display: block;
+}
+
+.italian-word {
+    color: #f72585;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.analysis-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.section-title {
+    color: #4cc9f0;
+    border-bottom: 1px solid rgba(76, 201, 240, 0.3);
     padding-bottom: 10px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
- 
-.card-title i {
-    color: #f72585;
-}
- 
-h3 {
-    color: #a9e4f9;
-    margin: 20px 0 10px;
-}
- 
-ul, ol {
+
+.analysis-list { /* Classe per pulizia stile inline */
+    margin: 15px 0; 
     padding-left: 25px;
-    margin-bottom: 15px;
 }
- 
-li {
-    margin-bottom: 8px;
-}
- 
-.example {
-    background: rgba(76, 201, 240, 0.1);
-    border-left: 4px solid #4cc9f0;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 0 8px 8px 0;
-}
- 
-.highlight {
-    color: #f72585;
-    font-weight: bold;
-}
- 
-.video-section {
-    text-align: center;
+
+/* Stili per la sezione CTA (Call to Action) in fondo alla pagina */
+.bottom-cta-container {
+    text-align: center; 
     margin: 40px 0;
-}
- 
-.video-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: linear-gradient(to right, #f72585, #b5179e);
-    color: white;
-    padding: 18px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: bold;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
-}
- 
-.video-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(247, 37, 133, 0.6);
-}
- 
-.video-btn i {
-    font-size: 1.5rem;
-}
- 
-.navigation {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 50px;
-}
- 
-.nav-btn {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(76, 201, 240, 0.3);
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    min-height: 120px;
-}
- 
-.nav-btn:hover {
-    background: rgba(76, 201, 240, 0.1);
-    border-color: #4cc9f0;
-    transform: translateY(-5px);
-}
- 
-.nav-btn i {
-    font-size: 2.2rem;
-    color: #4cc9f0;
-    min-width: 50px;
-    text-align: center;
-}
- 
-.nav-btn-content {
-    flex: 1;
-}
- 
-.nav-btn-title {
-    font-size: 1.3rem;
-    color: #4cc9f0;
-    margin-bottom: 8px;
-    display: block;
-}
- 
-.nav-btn-desc {
-    color: #a9e4f9;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
- 
-.beginner-badge {
-    background: #f72585;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    margin-left: 10px;
-    vertical-align: middle;
-}
- 
-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #a9e4f9;
-    font-size: 0.9rem;
-}
- 
-.grammar-icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #4361ee;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 10px;
-    font-weight: bold;
-}
- 
-.tooltip {
-    position: relative;
-    cursor: pointer;
-    border-bottom: 1px dashed #4cc9f0;
-}
- 
-.tooltip-text {
-    visibility: hidden;
-    width: 250px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 0.9rem;
-}
- 
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
- 
-.beginner-section {
-    background: linear-gradient(135deg, rgba(247, 37, 133, 0.1), rgba(67, 97, 238, 0.1));
-    border: 2px dashed #f72585;
-    margin: 30px 0;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-}
- 
-.beginner-section h3 {
-    color: #f72585;
-    margin-bottom: 15px;
-}
- 
-.beginner-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
-    margin-top: 20px;
-}
- 
-.beginner-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(247, 37, 133, 0.2);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    border: 1px solid #f72585;
-    transition: all 0.3s;
-}
- 
-.beginner-link:hover {
-    background: rgba(247, 37, 133, 0.4);
-    transform: scale(1.05);
-}
- 
-.key-words-list {
-    list-style-type: none;
-    padding-left: 0;
-}
- 
-.key-word-item {
-    margin-bottom: 12px;
-}
- 
-.key-word-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #4cc9f0;
-    text-decoration: none;
-    padding: 8px 15px;
-    background: rgba(76, 201, 240, 0.1);
-    border-radius: 8px;
-    transition: all 0.3s;
-}
- 
-.key-word-link:hover {
-    background: rgba(76, 201, 240, 0.2);
-    transform: translateX(5px);
-}
- 
-.key-word-icon {
-    color: #f72585;
-}
- 
-.external-link-icon {
-    margin-left: auto;
-    font-size: 0.8rem;
-    opacity: 0.7;
 }
 
-/* NUOVI STILI AGGIUNTI PER PULIZIA HTML INLINE */
-.info-header-text {
-    margin-top: 15px; 
-    color: #a9e4f9; 
-    font-size: 1rem;
-}
-
-.uda-cta-container {
-    display: flex; 
-    gap: 20px; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-    margin-top: 25px;
-}
-
-.uda-btn-intro {
+.video-btn-secondary {
     display: inline-flex; 
     align-items: center; 
     gap: 10px; 
-    background: linear-gradient(to right, #4cc9f0, #4361ee); 
+    background: linear-gradient(to right, #f72585, #b5179e); 
     color: white; 
     padding: 15px 30px; 
     border-radius: 50px; 
     text-decoration: none; 
     font-weight: bold;
+    transition: transform 0.3s;
 }
 
-.uda-btn-web {
+.video-btn-secondary:hover {
+    transform: scale(1.03);
+}
+
+.nav-btn-secondary {
     display: inline-flex; 
     align-items: center; 
     gap: 10px; 
-    background: rgba(247, 37, 133, 0.2); 
+    background: rgba(76, 201, 240, 0.2); 
     color: white; 
     padding: 15px 30px; 
     border-radius: 50px; 
     text-decoration: none; 
     font-weight: bold; 
-    border: 1px solid #f72585;
+    border: 1px solid #4cc9f0;
+    transition: background 0.3s;
 }
 
-.uda-cta-tip {
-    margin-top: 20px; 
-    font-size: 0.9rem; 
-    color: #a9e4f9;
+.nav-btn-secondary:hover {
+    background: rgba(76, 201, 240, 0.3);
 }
 
-.key-words-tip {
-    font-size: 0.9rem; 
-    color: #f72585;
+.footer-song-info {
+    margin: 5px 0; /* Aggiunto piccolo margine per separare le righe nel footer */
+}
+
+@media (max-width: 768px) {
+    .lyrics-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .vocab-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
