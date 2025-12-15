@@ -5,175 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traduzione - Take the Long Way Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #f1f1f1;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            color: #4cc9f0;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #a9e4f9;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            background: rgba(76, 201, 240, 0.1);
-            margin-top: 20px;
-            transition: all 0.3s;
-        }
-        
-        .back-btn:hover {
-            background: rgba(76, 201, 240, 0.2);
-        }
-        
-        .comparison-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 900px) {
-            .comparison-section {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .column {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            border: 1px solid rgba(76, 201, 240, 0.2);
-        }
-        
-        .column-title {
-            color: #f72585;
-            border-bottom: 2px solid #4cc9f0;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .lyrics-column {
-            font-family: 'Courier New', monospace;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            white-space: pre-line;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            overflow-x: auto;
-        }
-        
-        .chorus {
-            color: #4cc9f0;
-            font-weight: bold;
-            margin: 15px 0;
-            padding-left: 15px;
-            border-left: 3px solid #f72585;
-        }
-        
-        .translation-note {
-            background: rgba(247, 37, 133, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 25px 0;
-        }
-        
-        .study-path {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-        }
-        
-        .step {
-            display: flex;
-            margin-bottom: 25px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-        }
-        
-        .step-number {
-            background: #f72585;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        
-        .exercise-box {
-            background: rgba(67, 97, 238, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .exercise-title {
-            color: #4cc9f0;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #a9e4f9;
-        }
-        
-        .metafora-box {
-            background: rgba(114, 9, 183, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 4px solid #7209b7;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
+<body class="translation-page-body">
     <div class="container">
         <header>
             <h1><i class="fas fa-exchange-alt"></i> Traduzione Italiana</h1>
@@ -186,7 +20,7 @@
         <div class="comparison-section">
             <div class="column">
                 <h2 class="column-title"><i class="fas fa-language"></i> Testo Inglese</h2>
-                <div class="lyrics-column">
+                <div class="lyrics-content">
 So, you think you're a Romeo
 Playing a part in a picture show
 Well, take the long way home
@@ -246,7 +80,7 @@ Long way home
             
             <div class="column">
                 <h2 class="column-title"><i class="fas fa-flag"></i> Traduzione Italiana</h2>
-                <div class="lyrics-column">
+                 <div class="lyrics-content">
 Allora, pensi di essere un Romeo
 Che recita una parte in uno spettacolo
 Beh, prendi la strada più lunga per tornare a casa
@@ -349,17 +183,17 @@ Strada lunga per casa
             </div>
         </div>
         
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(to right, #f72585, #b5179e); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-right: 15px;">
+        <div class="bottom-cta-container">
+            <a href="https://youtu.be/LPRrHyXchEY" target="_blank" class="video-btn-secondary" rel="noopener noreferrer">
                 <i class="fab fa-youtube"></i> Ascolta la Canzone
             </a>
-            <a href="significato_profondo.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(114, 9, 183, 0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #7209b7;">
+            <a href="significato_profondo.html" class="nav-btn-secondary cta-purple">
                 <i class="fas fa-brain"></i> Approfondisci il Significato
             </a>
         </div>
         
         <footer>
-            <p>Traduzione italiana completa - Supertramp "Take the Long Way Home"</p>
+            <p class="footer-song-info">Traduzione italiana completa - Supertramp "Take the Long Way Home"</p>
         </footer>
     </div>
 </body>
