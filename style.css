@@ -277,22 +277,24 @@ footer {
     transform: scale(1.03);
 }
 
+/* Modifica applicata qui: sfondo solido per aumentare il contrasto e la visibilità */
 .nav-btn-secondary {
     display: inline-flex; 
     align-items: center; 
     gap: 10px; 
-    background: rgba(76, 201, 240, 0.2); 
+    background: #1a5e88; /* Sfondo scuro e solido per alta leggibilità */
     color: white; 
     padding: 15px 30px; 
     border-radius: 50px; 
     text-decoration: none; 
     font-weight: bold; 
     border: 1px solid #4cc9f0;
-    transition: background 0.3s;
+    transition: background 0.3s, border-color 0.3s;
 }
 
 .nav-btn-secondary:hover {
-    background: rgba(76, 201, 240, 0.3);
+    background: #2a73a3; /* Leggermente più chiaro al passaggio */
+    border-color: #a9e4f9;
 }
 
 .footer-song-info {
@@ -465,15 +467,15 @@ footer {
     border-left: 2px solid #f72585;
 }
 
-/* Modifica i pulsanti CTA viola per questa pagina */
+/* Modifica applicata qui: sfondo solido per aumentare il contrasto e la visibilità sui pulsanti CTA viola */
 .cta-purple {
-    background: rgba(114, 9, 183, 0.2); 
+    background: #4a046c; /* Viola scuro solido per contrasto */
     border: 1px solid #7209b7;
     transition: background 0.3s;
 }
 
 .cta-purple:hover {
-    background: rgba(114, 9, 183, 0.3);
+    background: #5f1585; /* Leggermente più chiaro al passaggio */
 }
 
 /* ========================================================= */
