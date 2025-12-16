@@ -277,24 +277,26 @@ footer {
     transform: scale(1.03);
 }
 
-/* Modifica applicata qui: sfondo solido per aumentare il contrasto e la visibilità */
+/* MODIFICA APPLICATA: Bottoni secondari ora blu chiaro (chiaro su scuro) per massima visibilità */
 .nav-btn-secondary {
     display: inline-flex; 
     align-items: center; 
     gap: 10px; 
-    background: #1a5e88; /* Sfondo scuro e solido per alta leggibilità */
-    color: white; 
+    background: #4cc9f0; /* Blu chiaro come colore di base */
+    color: #1a1a2e; /* Testo molto scuro per contrasto con lo sfondo chiaro */
     padding: 15px 30px; 
     border-radius: 50px; 
     text-decoration: none; 
     font-weight: bold; 
     border: 1px solid #4cc9f0;
-    transition: background 0.3s, border-color 0.3s;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(76, 201, 240, 0.4); /* Aggiunge un'ombra che lo stacca dal fondo */
 }
 
 .nav-btn-secondary:hover {
-    background: #2a73a3; /* Leggermente più chiaro al passaggio */
-    border-color: #a9e4f9;
+    background: #a9e4f9; /* Colore ancora più chiaro al passaggio */
+    color: #1a1a2e;
+    transform: scale(1.03);
 }
 
 .footer-song-info {
@@ -467,9 +469,10 @@ footer {
     border-left: 2px solid #f72585;
 }
 
-/* Modifica applicata qui: sfondo solido per aumentare il contrasto e la visibilità sui pulsanti CTA viola */
+/* MODIFICA APPLICATA: Sfondo solido per i pulsanti CTA viola */
 .cta-purple {
     background: #4a046c; /* Viola scuro solido per contrasto */
+    color: white; /* Assicuriamo il colore del testo per coerenza, anche se dovrebbe essere ereditato */
     border: 1px solid #7209b7;
     transition: background 0.3s;
 }
@@ -768,4 +771,4 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
-}
+    }
