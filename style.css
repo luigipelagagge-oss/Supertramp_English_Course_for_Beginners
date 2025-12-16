@@ -277,27 +277,29 @@ footer {
     transform: scale(1.03);
 }
 
-/* MODIFICA APPLICATA: Bottoni secondari ora GIALLO per massima visibilità */
+/* ************************************************************ */
+/* MODIFICA AD ALTO CONTRASTO: Bottoni secondari ora GIALLO e con !important */
 .nav-btn-secondary {
     display: inline-flex; 
     align-items: center; 
     gap: 10px; 
-    background: #ffc300; /* Giallo brillante */
-    color: #1a1a2e; /* Testo molto scuro per contrasto con lo sfondo giallo */
+    background: #ffc300 !important; /* Giallo brillante forzato */
+    color: #1a1a2e !important; /* Testo scuro forzato */
     padding: 15px 30px; 
     border-radius: 50px; 
     text-decoration: none; 
     font-weight: bold; 
     border: 1px solid #ffc300;
     transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(255, 195, 0, 0.4); /* Ombra gialla per risalto */
+    box-shadow: 0 4px 10px rgba(255, 195, 0, 0.6); /* Ombra gialla per risalto */
 }
 
 .nav-btn-secondary:hover {
-    background: #ffe37d; /* Giallo leggermente più chiaro al passaggio */
-    color: #1a1a2e;
+    background: #ffe37d !important; /* Giallo leggermente più chiaro al passaggio forzato */
+    color: #1a1a2e !important;
     transform: scale(1.03);
 }
+/* ************************************************************ */
 
 .footer-song-info {
     margin: 5px 0; /* Aggiunto piccolo margine per separare le righe nel footer */
